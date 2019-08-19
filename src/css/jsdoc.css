@@ -174,10 +174,6 @@ code {
 
 #content > header {
 	padding: 2.5% 5%;
-	/*position: sticky;
-	top: 0;
-	z-index: 1;
-	background: white;*/
 }
 
 .has-icon {
@@ -266,7 +262,6 @@ table h6 {
 	padding-top: 20px;
 }
 
-/*article > .container-overview > *:not(.description):not(table):not(ul),*/
 h4 + *:not(.description):not(.summary) {
 	margin-top: 5%;
 }
@@ -274,12 +269,6 @@ h4 + *:not(.description):not(.summary) {
 br {
 	margin-bottom: 5%;
 }
-
-/*article > *:not(header):not(.container-overview):not(h3) {
-	border-left: 2px solid rgba(0, 0, 0, .1);
-	padding-left: 5%;
-	padding-right: 5%;
-}*/
 
 .prettyprint {
 	white-space: pre-wrap;
@@ -297,7 +286,6 @@ br {
 .summary {
 	font-size: 125%;
 	color: #1f1e26;
-	/*color: #79859a;*/
 }
 
 .signature-attributes {
@@ -306,7 +294,6 @@ br {
 }
 
 .type-signature {
-	/*color: #79859a;*/
 	color: #5a6374;
 	font-size: 60%;
 	font-weight: lighter;
