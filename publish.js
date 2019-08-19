@@ -12,6 +12,32 @@ const linkto = helper.linkto;
 const resolveAuthorLinks = helper.resolveAuthorLinks;
 const hasOwnProp = Object.prototype.hasOwnProperty;
 
+/**
+ * @namespace
+ * @property {!object} @custom
+ * @property {!string} [@custom.siteName='JSDoc'] - The name of your site.
+ * @property {!object} @custom.themes
+ * @property {!string} [@custom.themes.prettify="css/tranquil-heart.min.css"]
+ *                                          - A valid url for the prettify theme.
+ * @property {!object} @custom.metadata
+ * @property {!string[]} @custom.metadata.tags - Raw tags that will be added to the
+ *                                            head of the document.
+ *                                            E.g: ['<meta/>', ...]
+ */
+const defaultEnvConfig = {
+    '@custom': {
+        siteName: 'JSDoc',
+        themes: {
+            prettify: 'css/tranquil-heart.min.css'
+        },
+        metadata: {
+            tags: [
+              '<meta name="viewport" content="width=device-width, initial-scale=1"/>'
+            ]
+        }
+    }
+};
+
 let data;
 let view;
 
@@ -418,6 +444,8 @@ exports.publish = (taffyData, opts, tutorials) => {
     let staticFiles;
     let staticFileScanner;
     let templatePath;
+
+    env.config = Object.assign({}, defaultEnvConfig, env.config);
 
     data = taffyData;
 
