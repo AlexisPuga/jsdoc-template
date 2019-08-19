@@ -329,6 +329,11 @@ dt.tag-deprecated + dd {
 	padding-left: 20px;
 }
 
+.prettyprint.linenums li.selected,
+.prettyprint.linenums li.selected * {
+	background-color: #1c1d2a;
+}
+
 @media only all and (min-width: 1360px) {
 	button[data-toggle-gs='open-page-header'] {
 		display: none;
