@@ -64,6 +64,7 @@ module.exports = {
             filename: 'css/[name].css'
         }),
         new JsDocPlugin({
+            conf: 'jsdoc.config.json',
         	cwd: 'docs'
         })
     ],
