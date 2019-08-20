@@ -16,7 +16,7 @@
 <?js } else if (doc.kind === 'source') { ?>
     <?js= self.partial('source.tmpl', doc) ?>
 <?js } else { ?>
-<article data-kind='<?js= doc.kind ?>' id='<?js= doc.id ?>'>
+<article data-kind='<?js= doc.kind ?>' <?js= doc.id ? "id='" + doc.id + "'" : '' ?>>
 
 <header>
   <?js if (!isGlobalPage) { ?>
