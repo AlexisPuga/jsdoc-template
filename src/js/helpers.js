@@ -11,6 +11,26 @@ exports.find = function (selector, parent) {
 	return exports.toArray((parent || document).querySelectorAll(selector + ''));
 };
 /**
+ * A function to be called on each parent node.
+ *
+ * @typedef {function} findParent~fn
+ * @this {!Node} - The current node.
+ * @returns {boolean} A truthy value if the element matches with the
+ *                      requirements.
+ */
+/**
+ * @param {Element} element - The start point.
+ * @param {findParent~fn} fn - A function that returns a boolean.
+ * @returns {?Element} The parent node or null.
+ */
+exports.findParent = function (element, fn) {
+	var currentElement = element;
+
+	while ((currentElement = currentElement.parentNode) && !fn.call(currentElement));
+
+	return currentElement;
+};
+/**
  * Adds an event listener to an element.
  *
  * @param {string|Element[]} elements - The targets.
@@ -38,33 +58,20 @@ exports.on = function (elements, eventNames, listener, options) {
 	});
 };
 /**
- * A function to be called on each parent node.
- *
- * @typedef {function} findParent~fn
- * @this {!Node} - The current node.
- * @returns {boolean} A truthy value if the element matches with the
- *                      requirements.
  * An element class.
  * @typedef {string} state
  */
 
 /**
- * @param {Element} element - The start point.
- * @param {findParent~fn} fn - A function that returns a boolean.
- * @returns {?Element} The parent node or null.
  * "add", "remove" or "toggle".
  * @typedef {string} action
  */
-exports.findParent = function (element, fn) {
-	var currentElement = element;
 
-	while ((currentElement = currentElement.parentNode) && !fn.call(currentElement));
 /**
  * The topmost Element.
  * @typedef {Element} globalElement
  */
 
-	return currentElement;
 /**
  * An {@link state} of a {@link globalElement}.
  * @typedef {string} globalState
@@ -235,7 +242,7 @@ exports.changeGlobalState = function (action, globalState, data) {
 	return exports.changeState(exports.getGlobalElement(), action, globalState);
 };
 
-/** Based on: https://github.com/sindresorhus/escape-string-regexp */
+/*! Based on: https://github.com/sindresorhus/escape-string-regexp */
 exports.escapeRegExp = function (string) {
 	return string.replace(/[|\\{}()[\]^$+*?.-]/g, '\\$&');
 };
