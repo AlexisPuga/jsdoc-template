@@ -20,9 +20,9 @@ var currentMember = /\:(.+)/.test(title) ? RegExp.$1 : RegExp.$0;
 	<?js } ?>
 	<link type='text/css' rel='stylesheet' href='css/main.css'/>
 </head>
-<body data-gs='{"open-page-header": "is-page-header-open"}'>
+<body data-gs='{"openPageHeader": "is-page-header-open", "searching": "is-searching"}'>
 	<div id='page-wrapper'>
-		<header id='page-header' data-gs-target='open-page-header'>
+		<header id='page-header' data-gs-target='openPageHeader'>
 			<h1 id='page-title'>
 				<a href='/'><?js= siteName ?></a>
 			</h1>
@@ -30,7 +30,7 @@ var currentMember = /\:(.+)/.test(title) ? RegExp.$1 : RegExp.$0;
 				<header>
 					<div id='search'>
 						<div class='textfield-wrapper'>
-							<input type='search' name='search' placeholder='Search...' data-internal-search='#content-nav li a' />
+							<input type='search' name='q' placeholder='Search...' data-internal-search='#content-nav li a' data-gs-search='searching'/>
 						</div>
 					</div>
 				</header>
@@ -39,7 +39,7 @@ var currentMember = /\:(.+)/.test(title) ? RegExp.$1 : RegExp.$0;
 			</nav>
 		</header>
 		<div id='main-wrapper'>
-			<button title='Toggle left bar' class='toggle-gs has-icon' data-css-icon='menu' type='button' data-toggle-gs='open-page-header'>
+			<button id='page-header-opener' title='Toggle left bar' class='has-icon' data-css-icon='menu' type='button' data-gs-toggle='openPageHeader'>
 			Toggle left bar
 			</button>
 			<main id='content'>
