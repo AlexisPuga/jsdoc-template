@@ -4,21 +4,25 @@
 	padding: 20px;
 	width: 320px;
 	height: 100vh;
-	background-color: #1c1d2a;
 	overflow-y: auto;
   	box-sizing: border-box;
 }
 
+#page-header {
+	background-color: #f3f3f3;
+}
+
+#page-header,
 #page-header a {
 	color: #777987;
 }
 
-#page-header,
 #page-header a b,
 #page-header a:hover,
-#page-header a:focus,
+#page-header :focus,
+#page-header li.is-active a,
 #page-title a {
-	color: white;
+	color: black;
 }
 
 #page-title {
@@ -35,10 +39,16 @@
 	background: inherit;
 	position: sticky;
 	top: -20px;
-	padding: 20px 0;
+	padding: 15px 0;
 	z-index: 1;
 }
 
 #content-nav > ul {
 	list-style: none;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+#content-nav li {
+	position: relative;
 }
