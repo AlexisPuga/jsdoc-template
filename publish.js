@@ -240,6 +240,17 @@ function getPathFromDoclet({meta}) {
         meta.filename;
 }
 
+/**
+ * Resolve links and set external ones with rel="noopener" and target="_blank"
+ * attributes.
+ * @see {@link helpers.resolveLinks}
+ */
+function resolveAllLinks(...args) {
+    return helper.resolveLinks.apply(null, args)
+        .replace(/<a\s+href=("|')(.+\/\/.+)\1/g,
+            '<a href=$1$2$1 target="_blank" rel="noopener noreferrer"');
+}
+
 function generate(title, docs, filename, resolveLinks) {
     let docData;
     let html;
@@ -257,7 +268,7 @@ function generate(title, docs, filename, resolveLinks) {
     html = view.render('container.tmpl', docData);
 
     if (resolveLinks) {
-        html = helper.resolveLinks(html); // turn {@link foo} into <a href="foodoc.html">foo</a>
+        html = resolveAllLinks(html); // turn {@link foo} into <a href="foodoc.html">foo</a>
     }
 
     fs.writeFileSync(outpath, html, 'utf8');
@@ -704,7 +715,7 @@ exports.publish = (taffyData, opts, tutorials) => {
         let html = view.render('tutorial.tmpl', tutorialData);
 
         // yes, you can use {@link} in tutorials too!
-        html = helper.resolveLinks(html); // turn {@link foo} into <a href="foodoc.html">foo</a>
+        html = resolveAllLinks(html); // turn {@link foo} into <a href="foodoc.html">foo</a>
 
         fs.writeFileSync(tutorialPath, html, 'utf8');
     }
