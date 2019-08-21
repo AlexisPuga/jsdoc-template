@@ -35,7 +35,7 @@ a:focus {
 
 b {
 	font-weight: normal;
-	text-decoration: underline;
+	/*text-decoration: underline;*/
 }
 
 input[type='search'] {
@@ -327,6 +327,20 @@ dt.tag-deprecated + dd {
 
 .prettyprint.linenums li.selected {
 	background-color: rgba(0, 0, 0, .1);
+}
+
+.is-searching nav ul:not(.matches),
+.is-searching nav li:not(.matches) {
+	display: none;
+}
+
+.is-searching nav ul.matches {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.is-searching nav h3 {
+	display: none;
 }
 
 @media only all and (min-width: 1360px) {
