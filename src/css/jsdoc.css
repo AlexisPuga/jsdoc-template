@@ -163,6 +163,8 @@ code {
 
 #content {
 	min-height: 100vh;
+	width: 100%;
+	overflow-x: auto;
 }
 
 #content > header {
@@ -295,6 +297,7 @@ br {
 
 h4.name {
 	font-size: 200%;
+	word-wrap: break-word;
 }
 
 .signature {
@@ -422,6 +425,28 @@ dt.tag-deprecated + dd {
 
 	input[type='search']:focus {
 		background: rgba(0, 0, 0, 0.05);
+	}
+
+}
+
+@media only all and (max-width: 1100px) {
+
+	thead {
+		display: none;
+	}
+
+	:not(td) > table > tbody {
+		overflow-x: auto;
+		display: block;
+		width: calc(100vw - 40px);
+	}
+
+	td {
+		white-space: nowrap;
+	}
+
+	td.default::before {
+		content: 'Defaults to: ';
 	}
 
 }
