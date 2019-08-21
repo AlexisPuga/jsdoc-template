@@ -13,16 +13,30 @@ const resolveAuthorLinks = helper.resolveAuthorLinks;
 const hasOwnProp = Object.prototype.hasOwnProperty;
 
 /**
+ * Raw tags that will be added to the head of the document.
+ * @typedef {string[]} defaultEnvConfig~tags
+ * @example
+ * [`<meta />`, `<link href="" />`]
+ * @example <caption>Non-Array values will be converted to an Array.</caption>
+ * `<meta />` // is valid, and it's the same as: [`<meta />`]
+ */
+/**
  * @namespace
  * @property {!object} @custom
  * @property {!string} [@custom.siteName='JSDoc'] - The name of your site.
+ *
  * @property {!object} @custom.themes
  * @property {!string} [@custom.themes.prettify="css/tranquil-heart.min.css"]
- *                                          - A valid url for the prettify theme.
+ *     A valid url for the prettify theme.
+ *
  * @property {!object} @custom.metadata
- * @property {!string[]} @custom.metadata.tags - Raw tags that will be added to the
- *                                            head of the document.
- *                                            E.g: ['<meta/>', ...]
+ * @property {!defaultEnvConfig~tags} [@custom.metadata.tags=[@custom.metadata.tags]]
+ *
+ * @property {!object} @custom.body
+ * @property {!defaultEnvConfig~tags} [@custom.body.tags=[@custom.body.tags]]
+ *
+ * @property {!object} @custom.footer
+ * @property {!defaultEnvConfig~tags} [@custom.footer.tags=[@custom.footer.tags]]
  */
 const defaultEnvConfig = {
     '@custom': {
@@ -32,8 +46,14 @@ const defaultEnvConfig = {
         },
         metadata: {
             tags: [
-              '<meta name="viewport" content="width=device-width, initial-scale=1"/>'
+              `<meta name="viewport" content="width=device-width, initial-scale=1"/>`
             ]
+        },
+        body: {
+            tags: []
+        },
+        footer: {
+            tags: []
         }
     }
 };
