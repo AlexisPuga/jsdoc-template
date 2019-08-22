@@ -68,10 +68,12 @@ var printTags = function (tags) {
 	</div>
 	<script src='js/prettify.js' async></script>
 	<script src='js/main.js' async></script>
-	<link type='text/css' rel='stylesheet' href='<?js= prettifyTheme ?>'/>
 	<link href='css/views/large.css' rel='stylesheet' media='all and (min-width: 1360px)'/>
 	<link href='css/views/medium.css' rel='stylesheet' media='all and (max-width: 1360px)'/>
 	<link href='css/views/small.css' rel='stylesheet' media='all and (max-width: 1100px)'/>
+	<?js if (prettifyTheme) { ?>
+	<link rel='stylesheet' type='text/css' href='<?js= prettifyTheme ?>'/>
+	<?js } ?>
 	<?js= printTags(bodyTags) ?>
 </body>
 </html>
