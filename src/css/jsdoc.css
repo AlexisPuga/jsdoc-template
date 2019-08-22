@@ -444,6 +444,14 @@ dt.tag-deprecated + dd {
 
 @media only all and (max-width: 1100px) {
 
+	h4.name {
+		font-size: 150%;
+	}
+
+	.description:not(td) {
+		font-size: 100%;
+	}
+
 	thead {
 		display: none;
 	}
