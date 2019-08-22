@@ -1,0 +1,31 @@
+{
+  "name": "jsdoc-template",
+  "version": "0.0.0",
+  "description": "A new design for the \"default\" template.",
+  "main": "publish.js",
+  "keywords": [],
+  "author": "Alexis Puga Ruíz",
+  "license": "Apache-2.0",
+  "scripts": {
+    "start": "NODE_ENV=development webpack-dev-server --config webpack.dev.js",
+    "build": "NODE_ENV=production webpack --config webpack.prod.js",
+    "lint": "eslint --fix"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.0.3",
+    "css-loader": "^3.0.0",
+    "eslint": "^6.0.1",
+    "eslint-loader": "^2.2.1",
+    "jsdoc-webpack-plugin": "git://github.com/AlexisPuga/jsdoc-webpack-plugin.git#release-0.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "taffydb": "^2.7.3",
+    "terser-webpack-plugin": "^1.3.0",
+    "webpack": "^4.36.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2",
+    "webpack-merge": "^4.2.1"
+  },
+  "dependencies": {}
+}

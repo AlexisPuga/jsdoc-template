@@ -1,0 +1,10 @@
+{
+	"opts": {
+		"template": "../",
+		"destination": "demo",
+		"recurse": true
+	},
+	"source": {
+		"include": ["examples"]
+	}
+}
