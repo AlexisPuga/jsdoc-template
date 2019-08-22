@@ -12,7 +12,7 @@ const isDevMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
     entry: {
-        main: './src/js/index.js'
+        main: './static/js/index.js'
     },
     output: {
         path: path.resolve(__dirname, 'static'),

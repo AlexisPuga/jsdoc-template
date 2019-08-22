@@ -1,0 +1,25 @@
+h4.name {
+	font-size: 150%;
+}
+
+.description:not(td) {
+	font-size: 100%;
+}
+
+thead {
+	display: none;
+}
+
+:not(td) > table > tbody {
+	overflow-x: auto;
+	display: block;
+	width: calc(100vw - 40px);
+}
+
+td {
+	white-space: nowrap;
+}
+
+td.default::before {
+	content: 'Defaults to: ';
+}
