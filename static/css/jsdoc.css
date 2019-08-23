@@ -234,21 +234,6 @@ article {
 	border-top: 1px solid rgba(0, 0, 0, .1);
 }
 
-article:not([data-kind='file']) {
-	margin-bottom: 5%;
-}
-
-article > *:not(header):not(.container-overview):not(h3) {
-	max-width: 1024px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-article > h3 + dl,
-article > h3 + ul {
-	max-width: unset !important;
-}
-
 ol {
 	list-style: decimal-leading-zero;
 }
@@ -270,6 +255,7 @@ ol, ul, dl {
 
 article > h3 {
 	position: -webkit-sticky;
+	margin-top: 5%;
 	position: sticky;
 	top: 0;
 	z-index: 1;
@@ -278,19 +264,29 @@ article > h3 {
 	margin-bottom: -1px;
 }
 
-article > h4 {
+.member {
+	overflow: hidden;
+}
+
+.container-overview > .member {
+	padding-top: 5%;
+}
+
+article > .member {
 	padding-top: 10%;
+	padding-bottom: 5%;
 	border-top: 1px solid rgba(0, 0, 0, .1);
+	max-width: 1024px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-article > :not(h3) + h4,
-article > h4 ~ h3 {
-	margin-top: 10%;
+.member > *:not(h5):not(h4):not(h3):not(.param-desc):not(:last-child) {
+	margin-bottom: 70px;
 }
 
-article > *:not(h5):not(h4):not(h3):not(header):not(.param-desc):not(:last-child),
-article > .container-overview > *:not(h5):not(h4):not(h3):not(header):not(.param-desc):not(:last-child) {
-	margin-bottom: 5%;
+.member > *:last-child {
+	margin-bottom: 0;
 }
 
 dd {
@@ -301,16 +297,8 @@ dd + dd {
 	margin-top: -20px;
 }
 
-.param-desc {
-	padding-bottom: 20px;
-}
-
 table h6 {
 	padding-top: 20px;
-}
-
-h4 + *:not(.description):not(.summary) {
-	margin-top: 5%;
 }
 
 br {

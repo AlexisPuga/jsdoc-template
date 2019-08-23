@@ -2,13 +2,14 @@
 var data = obj;
 var self = this;
 ?>
+<div id="<?js= id ?>" class='method member'>
 <?js if (data.kind !== 'module' && !data.hideconstructor) { ?>
     <?js if (data.kind === 'class' && data.classdesc) { ?>
     <h2>Constructor</h2>
     <?js } ?>
 
     <?js if (data.kind !== 'namespace') { ?>
-    <h4 class="name" id="<?js= id ?>"><?js= data.attribs + name + (data.signature || '') ?></h4>
+    <h4 class="name"><?js= data.attribs + name + (data.signature || '') ?></h4>
     <?js } ?>
 
     <?js if (data.summary) { ?>
@@ -128,3 +129,4 @@ var self = this;
     <h5>Example<?js= examples.length > 1? 's':'' ?></h5>
     <?js= this.partial('examples.tmpl', examples) ?>
 <?js } ?>
+</div>
