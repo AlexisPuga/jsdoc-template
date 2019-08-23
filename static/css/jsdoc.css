@@ -48,10 +48,15 @@ aside {
 }
 
 button {
-	background: #f3f3f3;
+	background: #fbfbfb;
 	cursor: pointer;
 	border-radius: 0;
 	color: black;
+	border: 1px solid #f3f3f3;
+}
+
+button.is-active {
+	background: #f3f3f3;
 }
 
 button.has-icon {
@@ -165,6 +170,7 @@ code {
 
 #content > header {
 	padding: 2.5% 5%;
+	display: none;
 }
 
 .has-icon {
@@ -234,11 +240,6 @@ code {
 	border-top: 1px solid #ededed;
 }
 
-article {
-	padding: 5%;
-	border-top: 1px solid rgba(0, 0, 0, .1);
-}
-
 ol {
 	list-style: decimal-leading-zero;
 }
@@ -259,7 +260,6 @@ ol, ul, dl {
 }
 
 article > h3 {
-	margin-top: 5%;
 	position: sticky;
 	top: 0;
 	z-index: 1;
@@ -268,25 +268,35 @@ article > h3 {
 	margin-bottom: -1px;
 }
 
-.member {
+.member,
+.container-overview {
 	overflow: hidden;
 }
 
-.container-overview > .member {
-	padding-top: 5%;
-}
-
 article > .member {
-	padding-top: 10%;
 	padding-bottom: 5%;
+	padding-top: 10%;
 	border-top: 1px solid rgba(0, 0, 0, .1);
 	max-width: 1024px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-.member > *:not(h5):not(h4):not(h3):not(.param-desc):not(:last-child) {
-	margin-bottom: 70px;
+.member > *:not(h5):not(h4):not(h3):not(h2):not(.param-desc):not(:last-child) {
+	margin-bottom: 50px;
+}
+
+.member h2,
+article:not([data-kind='globalobj']) > .container-overview > :first-child:not(.description):not(.member) {
+	margin-top: 50px;
+}
+
+article:not([data-kind='globalobj']) > h3 {
+	margin-top: 5%;
+}
+
+.container-overview > *:not(h5):not(h4):not(h3):not(h2):not(:last-child) {
+	margin-bottom: 50px;
 }
 
 .member > *:last-child {
@@ -341,7 +351,17 @@ br {
 
 h4.name {
 	font-size: 200%;
-	word-wrap: break-word;
+}
+
+article:not(:last-child) {
+	border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+article {
+	padding: 5%;
+	width: 100%;
+	word-break: break-all;
+	box-sizing: border-box;
 }
 
 .signature {

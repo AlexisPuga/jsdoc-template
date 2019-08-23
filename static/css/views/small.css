@@ -2,17 +2,40 @@ h4.name {
 	font-size: 150%;
 }
 
+.signature {
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
 .description:not(td) {
 	font-size: 100%;
+}
+
+article > .member {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
 thead {
 	display: none;
 }
 
+article {
+	padding: 20px;
+}
+
 :not(td) > table > tbody {
 	overflow-x: auto;
 	display: block;
+}
+
+.member > table > tbody {
+	width: calc(100vw - 80px);
+}
+
+.container-overview table > tbody {
 	width: calc(100vw - 40px);
 }
 
@@ -23,3 +46,4 @@ td {
 td.default::before {
 	content: 'Defaults to: ';
 }
+

@@ -1,3 +1,7 @@
+article > .member {
+	padding-bottom: 10%;
+}
+
 #page-header-opener {
 	display: none;
 }
