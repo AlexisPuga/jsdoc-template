@@ -240,6 +240,14 @@ code {
 	border-top: 1px solid rgba(0, 0, 0, .1);
 }
 
+small {
+	font-size: 1rem;
+}
+
+small a {
+	color: black;
+}
+
 ol {
 	list-style: decimal-leading-zero;
 }
