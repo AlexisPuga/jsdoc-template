@@ -32,8 +32,8 @@ var printTags = function (tags) {
 <head>
 	<meta charset='utf-8'/>
 	<title><?js= title + ' - ' + siteName ?></title>
-	<?js= printTags(metadataTags) ?>
 	<link type='text/css' rel='stylesheet' href='css/main.css'/>
+	<?js= printTags(metadataTags) ?>
 </head>
 <body data-gs='{"openPageHeader": "is-page-header-open", "searching": "is-searching"}'>
 	<div id='page-wrapper'>
@@ -66,11 +66,11 @@ var printTags = function (tags) {
 			</footer>
 		</div>
 	</div>
-	<script src='js/prettify.js' async></script>
-	<script src='js/main.js' async></script>
 	<link href='css/views/large.css' rel='stylesheet' media='all and (min-width: 1360px)'/>
 	<link href='css/views/medium.css' rel='stylesheet' media='all and (max-width: 1360px)'/>
 	<link href='css/views/small.css' rel='stylesheet' media='all and (max-width: 767px)'/>
+	<script src='js/prettify.js' async></script>
+	<script src='js/main.js' async></script>
 	<?js if (prettifyTheme) { ?>
 	<link rel='stylesheet' type='text/css' href='<?js= prettifyTheme ?>'/>
 	<?js } ?>
