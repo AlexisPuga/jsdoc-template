@@ -3,7 +3,6 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 const JsDocPlugin = require('jsdoc-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
@@ -12,7 +11,7 @@ const isDevMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
     entry: {
-        main: './src/js/index.js'
+        main: './static/js/index.js'
     },
     output: {
         path: path.resolve(__dirname, 'static'),
@@ -48,18 +47,6 @@ module.exports = {
             path.join(process.cwd(), 'docs/demo/**/*')
           ]
         }),
-        new CopyPlugin([
-            {
-                from: 'src/js/external/*.js',
-                to: 'js/',
-                flatten: true
-            },
-            {
-                from: 'src/css/external/*.css',
-                to: 'css/',
-                flatten: true
-            }
-        ]),
         new MiniCssExtractPlugin({
             filename: 'css/[name].css'
         }),

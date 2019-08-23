@@ -1,6 +1,4 @@
 @import 'reset.css';
-@import 'page-header.css';
-@import 'page-footer.css';
 @import 'icons.css';
 
 html {
@@ -35,7 +33,6 @@ a:focus {
 
 b {
 	font-weight: normal;
-	/*text-decoration: underline;*/
 }
 
 input[type='search'] {
@@ -51,10 +48,15 @@ aside {
 }
 
 button {
-	background: #f3f3f3;
+	background: #fbfbfb;
 	cursor: pointer;
 	border-radius: 0;
 	color: black;
+	border: 1px solid #f3f3f3;
+}
+
+button.is-active {
+	background: #f3f3f3;
 }
 
 button.has-icon {
@@ -76,9 +78,9 @@ h1, h2 { font-size: 200%; }
 h3, h4 { font-size: 150%; }
 h5, h6 { font-size: 125%; }
 
-article h3,
-article h5,
-article h6,
+.doc h3,
+.doc h5,
+.doc h6,
 nav > h3 {
 	text-transform: uppercase;
 }
@@ -92,9 +94,9 @@ nav > h3 {
 	font-size: 100%;
 }
 
-article h3,
-article h4,
-article h5,
+.doc h3,
+.doc h4,
+.doc h5,
 dt, th {
 	color: #1f1e26;
 	font-size: 100%;
@@ -139,9 +141,9 @@ table h6 {
 	font-size: 100%;
 }
 
-article code,
+.doc code,
 h4.name,
-article h2 {
+.doc h2 {
 	color: #1f1e26;
 	font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco,
 				Consolas, monospace;
@@ -164,11 +166,10 @@ code {
 #content {
 	min-height: 100vh;
 	width: 100%;
-	overflow-x: auto;
 }
 
 #content > header {
-	padding: 2.5% 5%;
+	padding: 50px;
 }
 
 .has-icon {
@@ -177,24 +178,74 @@ code {
 	overflow: hidden;
 }
 
-article {
-	padding: 5%;
-	border-top: 1px solid rgba(0, 0, 0, .1);
+#page-header {
+	position: sticky;
+	top: 0;
+	padding: 20px;
+	width: 320px;
+	height: 100vh;
+	overflow-y: auto;
+  	box-sizing: border-box;
 }
 
-article:not([data-kind='file']) {
-	margin-bottom: 5%;
+#page-header {
+	background-color: #f3f3f3;
 }
 
-article > *:not(header):not(.container-overview):not(h3) {
-	max-width: 1024px;
-	margin-left: auto;
-	margin-right: auto;
+#page-header,
+#page-header a {
+	color: #777987;
 }
 
-article > h3 + dl,
-article > h3 + ul {
-	max-width: unset !important;
+#page-header a b,
+#page-header a:hover,
+#page-header :focus,
+#page-header li.is-active a,
+#page-title a,
+#content-title {
+	color: black;
+}
+
+#page-title {
+	padding: 20px 0;
+	text-align: center;
+}
+
+#content-nav {
+	background: inherit;
+	padding-bottom: 20px;
+}
+
+#content-nav > header {
+	background: inherit;
+	position: sticky;
+	top: -20px;
+	padding: 15px 0;
+	z-index: 1;
+}
+
+#content-nav > ul {
+	list-style: none;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+#content-nav li {
+	position: relative;
+}
+
+#page-footer {
+	padding: 2.5% 5%;
+	text-align: right;
+	border-top: 1px solid #f3f3f3;
+}
+
+small {
+	font-size: 1rem;
+}
+
+small a {
+	color: black;
 }
 
 ol {
@@ -216,29 +267,49 @@ ol, ul, dl {
 	padding-left: 20px;
 }
 
-article > h3 {
-	position: -webkit-sticky;
+.doc > h3 {
 	position: sticky;
 	top: 0;
 	z-index: 1;
 	background: #fbfbfb;
-	border-bottom: 1px solid rgba(0, 0, 0, .1);
+	border-bottom: 1px solid #f3f3f3;
 	margin-bottom: -1px;
 }
 
-article > h4 {
+.member,
+.container-overview {
+	overflow: hidden;
+}
+
+.doc > .member {
+	padding-bottom: 5%;
 	padding-top: 10%;
-	border-top: 1px solid rgba(0, 0, 0, .1);
+	border-top: 1px solid #f3f3f3;
+	max-width: 1024px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-article > :not(h3) + h4,
-article > h4 ~ h3 {
-	margin-top: 10%;
+.member > *:not(h5):not(h4):not(h3):not(h2):not(.param-desc):not(:last-child) {
+	margin-bottom: 50px;
 }
 
-article > *:not(h5):not(h4):not(h3):not(header):not(.param-desc):not(:last-child),
-article > .container-overview > *:not(h5):not(h4):not(h3):not(header):not(.param-desc):not(:last-child) {
-	margin-bottom: 5%;
+.member h2,
+.container-overview > :first-child:not(.description):not(.member),
+.container-overview > .member > :first-child:not(.description) {
+	margin-top: 50px;
+}
+
+.doc:not([data-kind='globalobj']) > h3 {
+	margin-top: 5%;
+}
+
+.container-overview > *:not(h5):not(h4):not(h3):not(h2):not(:last-child) {
+	margin-bottom: 50px;
+}
+
+.member > *:last-child {
+	margin-bottom: 0;
 }
 
 dd {
@@ -249,16 +320,8 @@ dd + dd {
 	margin-top: -20px;
 }
 
-.param-desc {
-	padding-bottom: 20px;
-}
-
 table h6 {
 	padding-top: 20px;
-}
-
-h4 + *:not(.description):not(.summary) {
-	margin-top: 5%;
 }
 
 br {
@@ -297,7 +360,17 @@ br {
 
 h4.name {
 	font-size: 200%;
-	word-wrap: break-word;
+}
+
+.doc {
+	border-top: 1px solid #f3f3f3;
+}
+
+.doc {
+	padding: 50px;
+	width: 100%;
+	word-break: break-all;
+	box-sizing: border-box;
 }
 
 .signature {
@@ -341,126 +414,4 @@ dt.tag-deprecated + dd {
 
 .is-searching nav h3 {
 	display: none;
-}
-
-@media only all and (min-width: 1360px) {
-
-	#page-header-opener {
-		display: none;
-	}
-
-	#content-nav li.is-active::before {
-		content: '☞';
-		color: white;
-		position: absolute;
-		right: 100%;
-		margin-right: .3em;
-	}
-
-	#page-header {
-		background: #1c1d2a;
-	}
-
-	#page-header a b,
-	#page-header a:hover,
-	#page-header :focus,
-	#page-header li.is-active a,
-	#page-title a {
-		color: white;
-	}
-
-	input[type='search'] {
-		background-color: rgba(255, 255, 255, .03);
-	}
-
-	input[type='search']:focus {
-		background: rgba(255, 255, 255, 0.05);
-	}
-
-}
-
-@media only all and (max-width: 1360px) {
-
-	#page-header {
-		position: fixed;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		z-index: 998;
-	  	order: 2;
-	}
-
-	body:not(.is-page-header-open) #page-header {
-		opacity: 0;
-		visibility: hidden;
-	}
-
-	#page-header > * {
-		transition: all .35s ease;
-		opacity: 1;
-		transform: translateX(0);
-	}
-
-	body:not(.is-page-header-open) #page-header > * {
-		opacity: 0;
-		transform: translateX(25px);
-	}
-
-	#main-wrapper {
-		width: 100%;
-	}
-
-	#page-header-opener {
-		position: fixed;
-		top: 0;
-		right: 0;
-		z-index: 998;
-	}
-
-	#content-nav > ul {
-		padding-left: 0;
-		margin-top: 0;
-	}
-
-	#content-nav li:not(.is-active)::before {
-		content: '↳ ';
-	}
-
-	#content-nav li.is-active::before {
-		content: '☞ ';
-		color: black;
-	}
-
-	input[type='search'] {
-		padding-left: 15px;
-		padding-right: 60px;
-		background-color: rgba(0, 0, 0, .03);
-	}
-
-	input[type='search']:focus {
-		background: rgba(0, 0, 0, 0.05);
-	}
-
-}
-
-@media only all and (max-width: 1100px) {
-
-	thead {
-		display: none;
-	}
-
-	:not(td) > table > tbody {
-		overflow-x: auto;
-		display: block;
-		width: calc(100vw - 40px);
-	}
-
-	td {
-		white-space: nowrap;
-	}
-
-	td.default::before {
-		content: 'Defaults to: ';
-	}
-
 }

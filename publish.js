@@ -46,14 +46,25 @@ const defaultEnvConfig = {
         },
         metadata: {
             tags: [
-              `<meta name="viewport" content="width=device-width, initial-scale=1"/>`
+                `<meta name="viewport" content="width=device-width,
+                    initial-scale=1"/>`
             ]
         },
         body: {
             tags: []
         },
         footer: {
-            tags: []
+            tags: [
+                `<small style='margin-left: 1em;'>Design by <a
+                    href='https://github.com/AlexisPuga'
+                    target='_blank'
+                    rel="noopener noreferrer">Alexis Puga</a>.</small>`
+                /* // or:
+                `<small style='margin-left: 1em;'><a
+                    href='https://github.com/AlexisPuga'
+                    target='_blank'
+                    rel="noopener noreferrer">Design</a> by Alexis Puga.</small>` */
+            ]
         }
     }
 };
