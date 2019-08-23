@@ -169,8 +169,7 @@ code {
 }
 
 #content > header {
-	padding: 2.5% 5%;
-	display: none;
+	padding: 50px;
 }
 
 .has-icon {
@@ -203,6 +202,7 @@ code {
 #page-header :focus,
 #page-header li.is-active a,
 #page-title a,
+#content-title {
 	color: black;
 }
 
