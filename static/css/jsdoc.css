@@ -78,9 +78,9 @@ h1, h2 { font-size: 200%; }
 h3, h4 { font-size: 150%; }
 h5, h6 { font-size: 125%; }
 
-article h3,
-article h5,
-article h6,
+.doc h3,
+.doc h5,
+.doc h6,
 nav > h3 {
 	text-transform: uppercase;
 }
@@ -94,9 +94,9 @@ nav > h3 {
 	font-size: 100%;
 }
 
-article h3,
-article h4,
-article h5,
+.doc h3,
+.doc h4,
+.doc h5,
 dt, th {
 	color: #1f1e26;
 	font-size: 100%;
@@ -141,9 +141,9 @@ table h6 {
 	font-size: 100%;
 }
 
-article code,
+.doc code,
 h4.name,
-article h2 {
+.doc h2 {
 	color: #1f1e26;
 	font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco,
 				Consolas, monospace;
@@ -202,7 +202,7 @@ code {
 #page-header a:hover,
 #page-header :focus,
 #page-header li.is-active a,
-#page-title a {
+#page-title a,
 	color: black;
 }
 
@@ -237,7 +237,7 @@ code {
 #page-footer {
 	padding: 2.5% 5%;
 	text-align: right;
-	border-top: 1px solid #ededed;
+	border-top: 1px solid rgba(0, 0, 0, .1);
 }
 
 ol {
@@ -259,7 +259,7 @@ ol, ul, dl {
 	padding-left: 20px;
 }
 
-article > h3 {
+.doc > h3 {
 	position: sticky;
 	top: 0;
 	z-index: 1;
@@ -273,7 +273,7 @@ article > h3 {
 	overflow: hidden;
 }
 
-article > .member {
+.doc > .member {
 	padding-bottom: 5%;
 	padding-top: 10%;
 	border-top: 1px solid rgba(0, 0, 0, .1);
@@ -287,11 +287,12 @@ article > .member {
 }
 
 .member h2,
-article:not([data-kind='globalobj']) > .container-overview > :first-child:not(.description):not(.member) {
+.container-overview > :first-child:not(.description):not(.member),
+.container-overview > .member > :first-child:not(.description) {
 	margin-top: 50px;
 }
 
-article:not([data-kind='globalobj']) > h3 {
+.doc:not([data-kind='globalobj']) > h3 {
 	margin-top: 5%;
 }
 
@@ -353,12 +354,12 @@ h4.name {
 	font-size: 200%;
 }
 
-article:not(:last-child) {
-	border-bottom: 1px solid rgba(0, 0, 0, .1);
+.doc {
+	border-top: 1px solid rgba(0, 0, 0, .1);
 }
 
-article {
-	padding: 5%;
+.doc {
+	padding: 50px;
 	width: 100%;
 	word-break: break-all;
 	box-sizing: border-box;

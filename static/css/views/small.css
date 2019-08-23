@@ -11,19 +11,22 @@ h4.name {
 	font-size: 100%;
 }
 
-article > .member {
-	padding-top: 40px;
-	padding-bottom: 40px;
-	margin-left: 20px;
-	margin-right: 20px;
+.doc > .member {
+	padding: 50px 0;
+	margin: 0 0;
 }
 
 thead {
 	display: none;
 }
 
-article {
-	padding: 20px;
+.doc,
+#content > header {
+	padding: 30px;
+}
+
+#content > header {
+	padding-right: 60px;
 }
 
 :not(td) > table > tbody {
@@ -32,11 +35,11 @@ article {
 }
 
 .member > table > tbody {
-	width: calc(100vw - 80px);
+	width: calc(100vw - 60px);
 }
 
 .container-overview table > tbody {
-	width: calc(100vw - 40px);
+	width: calc(100vw - 30px);
 }
 
 td {
