@@ -33,7 +33,6 @@ a:focus {
 
 b {
 	font-weight: normal;
-	/*text-decoration: underline;*/
 }
 
 input[type='search'] {
@@ -260,7 +259,6 @@ ol, ul, dl {
 }
 
 article > h3 {
-	position: -webkit-sticky;
 	margin-top: 5%;
 	position: sticky;
 	top: 0;
