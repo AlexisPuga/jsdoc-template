@@ -7,7 +7,7 @@ const JsDocPlugin = require('jsdoc-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 /* eslint-disable-next-line no-process-env */
-const isDevMode = process.env.NODE_ENV !== 'production';
+const isDevMode = !/production|test/i.test(process.env.NODE_ENV);
 
 module.exports = {
     entry: {
