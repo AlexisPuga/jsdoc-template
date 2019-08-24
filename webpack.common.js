@@ -60,7 +60,7 @@ module.exports = {
             {
                 enforce: 'pre',
                 test: /\.js$/,
-                exclude: /(node_modules|external)/,
+                exclude: /(node_modules|\.min)/,
                 loader: 'eslint-loader',
                 options: {
                     fix: true,
