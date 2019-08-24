@@ -1,3 +1,6 @@
+/**
+ * @file Manages the default configurations for the template.
+ */
 module.exports = {
     /**
      * All default options should be available.
@@ -12,7 +15,10 @@ module.exports = {
 		default: {
             includeDate: false
         },
-        /** @type {!object} */
+        /**
+         * Options for this template.
+         * @type {!object}
+         */
 		custom: {
             /**
              * The name of your site.
@@ -24,8 +30,10 @@ module.exports = {
                 /**
                  * A valid url for the prettify theme.
                  *
-                 * Note: If a relative url is passed, it will use the "/static".
-                 * directory of this project.
+                 * Note: If a relative url is passed, you should add static files to
+                 * "templates.default.staticFiles". Please, check
+                 * {@link https://jsdoc.app/about-configuring-default-template.html#copying-static-files-to-the-output-directory}
+                 * for details.
                  *
                  * @type {?string}
                  */
@@ -33,7 +41,7 @@ module.exports = {
             },
             /**
              * Raw tags that will be added to the document.
-             * This could be wharever you want.
+             * Any <tag> is allowed.
              *
              * @typedef {string|string[]} tags
              *
@@ -56,7 +64,8 @@ module.exports = {
                 /**
                  * Prepend tags to the page header.
                  *
-                 * Note: This removes the heading of the header.
+                 * Note: If one or more <tags> are provided, the heading that includes
+                 * your site name will be removed.
                  *
                  * @type {!tags}
                  */
