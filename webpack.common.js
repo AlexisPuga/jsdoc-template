@@ -71,7 +71,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                exclude: /(node_modules|external)/,
+                exclude: /(node_modules|\.min)/,
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader,
