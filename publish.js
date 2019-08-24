@@ -7,67 +7,14 @@ const path = require('jsdoc/path');
 const { taffy } = require('taffydb');
 const template = require('jsdoc/template');
 
+const customTemplateConfig = (file => {
+    delete require.cache[file];
+    return require(file);
+})('./config.js');
 const htmlsafe = helper.htmlsafe;
 const linkto = helper.linkto;
 const resolveAuthorLinks = helper.resolveAuthorLinks;
 const hasOwnProp = Object.prototype.hasOwnProperty;
-
-/**
- * Raw tags that will be added to the head of the document.
- * @typedef {string[]} defaultEnvConfig~tags
- * @example
- * [`<meta />`, `<link href="" />`]
- * @example <caption>Non-Array values will be converted to an Array.</caption>
- * `<meta />` // is valid, and it's the same as: [`<meta />`]
- */
-/**
- * @namespace
- * @property {!object} @custom
- * @property {!string} [@custom.siteName='JSDoc'] - The name of your site.
- *
- * @property {!object} @custom.themes
- * @property {!string} [@custom.themes.prettify="css/tranquil-heart.min.css"]
- *     A valid url for the prettify theme.
- *
- * @property {!object} @custom.metadata
- * @property {!defaultEnvConfig~tags} [@custom.metadata.tags=[@custom.metadata.tags]]
- *
- * @property {!object} @custom.body
- * @property {!defaultEnvConfig~tags} [@custom.body.tags=[@custom.body.tags]]
- *
- * @property {!object} @custom.footer
- * @property {!defaultEnvConfig~tags} [@custom.footer.tags=[@custom.footer.tags]]
- */
-const defaultEnvConfig = {
-    '@custom': {
-        siteName: 'JSDoc',
-        themes: {
-            prettify: 'css/tranquil-heart.min.css'
-        },
-        metadata: {
-            tags: [
-                `<meta name="viewport" content="width=device-width,
-                    initial-scale=1"/>`
-            ]
-        },
-        body: {
-            tags: []
-        },
-        footer: {
-            tags: [
-                `<small style='margin-left: 1em;'>Design by <a
-                    href='https://github.com/AlexisPuga'
-                    target='_blank'
-                    rel="noopener noreferrer">Alexis Puga</a>.</small>`
-                /* // or:
-                `<small style='margin-left: 1em;'><a
-                    href='https://github.com/AlexisPuga'
-                    target='_blank'
-                    rel="noopener noreferrer">Design</a> by Alexis Puga.</small>` */
-            ]
-        }
-    }
-};
 
 let data;
 let view;
@@ -487,10 +434,9 @@ exports.publish = (taffyData, opts, tutorials) => {
     let staticFileScanner;
     let templatePath;
 
-    env.config = Object.assign({}, defaultEnvConfig, env.config);
-
     data = taffyData;
 
+    _.defaultsDeep(env.conf, customTemplateConfig);
     conf = env.conf.templates || {};
     conf.default = conf.default || {};
 
