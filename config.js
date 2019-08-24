@@ -43,16 +43,16 @@ module.exports = {
              * @example <caption>Non-Array values will be converted to an Array.</caption>
              * `<meta />` // becomes [`<meta />`]
              */
-            /** @type {!object} */
+            /**
+             * Custom tags added after `defaultTags`.
+             * @type {!object}
+             */
             tags: {
                 /**
                  * Append tags to the head of the document.
                  * @type {!tags}
                  */
-                head: [
-                    `<meta name="viewport" content="width=device-width,
-                        initial-scale=1"/>`
-                ],
+                head: [],
                 /**
                  * Prepend tags to the page header.
                  *
@@ -68,10 +68,27 @@ module.exports = {
                 body: [],
                 /**
                  * Appends tags to the page footer.
-                 *
+                 * @type {!tags}
+                 */
+                footer: []
+            },
+            /**
+             * Default but optional tags added before `tags`.
+             * @type {!object}
+             */
+            defaultTags: {
+                /** @type {!tags} */
+                head: [
+                    `<meta name="viewport" content="width=device-width,
+                        initial-scale=1"/>`
+                ],
+                /** @type {!tags} */
+                header: [],
+                /** @type {!tags} */
+                body: [],
+                /**
                  * Note: Attribution for using this template is not required,
                  * but it's appreciated.
-                 *
                  * @type {!tags}
                  */
                 footer: [
