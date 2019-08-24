@@ -9,7 +9,9 @@ module.exports = {
 	templates: {
         // cleverLinks: false,
         // monospaceLinks: false,
-		// default: {},
+		default: {
+            includeDate: false
+        },
         /** @type {!object} */
 		custom: {
             /**
