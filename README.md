@@ -32,16 +32,16 @@ Make this template yours too:
 // jsdoc.config.js
 
 module.exports = {
-	templates: {
-		// Options for this template.
-		custom: {
-			tags: {
-				head: [
-					`<style>body, html { font-family: serif; }</style>`
-				]
-			}
-		}
-	}
+    templates: {
+        // Options for this template.
+        custom: {
+            tags: {
+                head: [
+                    `<style>body, html { font-family: serif; }</style>`
+                ]
+            }
+        }
+    }
 }
 
 ```
@@ -51,20 +51,20 @@ module.exports = {
 ```json
 
 {
-	"templates": {
-		"default": {
-			"staticFiles": {
-				"include": [
-					"./path/to/your/theme.css"
-				]
-			}
-		},
-		"custom": {
-			"themes": {
-				"prettify": "theme.css"
-			}
-		}
-	}
+    "templates": {
+        "default": {
+            "staticFiles": {
+                "include": [
+                    "./path/to/your/theme.css"
+                ]
+            }
+        },
+        "custom": {
+            "themes": {
+                "prettify": "theme.css"
+            }
+        }
+    }
 }
 
 ```
@@ -75,23 +75,23 @@ module.exports = {
 // jsdoc.config.js
 
 module.exports = {
-	templates: {
-		default: {
-			staticFiles: {
-				include: [
-					'path/to/your/favicon-32x32.png'
-				]
-			}
-		},
-		custom: {
-			siteName: 'My site',
-			tags: {
-				head: [
-					`<link href="favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>`
-				]
-			}
-		}
-	} 
+    templates: {
+        default: {
+            staticFiles: {
+                include: [
+                    'path/to/your/favicon-32x32.png'
+                ]
+            }
+        },
+        custom: {
+            siteName: 'My site',
+            tags: {
+                head: [
+                    `<link href="favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>`
+                ]
+            }
+        }
+    } 
 };
 
 ```
