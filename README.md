@@ -96,33 +96,13 @@ module.exports = {
 
 ```
 
-## Fork it
-
-Want to add something to this template? **Fork it**.
-
-### Then...
-
-Start developing your feature.
-1. Create a new branch from master (use a descriptive name).
-2. Run ``` npm run development ``` from a CLI.
-3. Open ``` localhost:9000 ``` from your browser.
-4. Modify any js/css file to reload the configuration.
-
 ## Contribute
 
-Your contributions are welcome (and needed).
-If you found an issue or want to make an enhancement, open a **Pull Request**.
+Your contributions are welcome (and needed). Please check the [CONTRIBUTING](CONTRIBUTING.md) file for details.
 
-### Requisites
+## Versioning
 
-Remember that this is *kind of a Fork* and everything was implemented trying to make minor changes to the [default template](https://github.com/jsdoc/jsdoc/templates/default) in order to make updates faster (if something from his side fails or is buggy). 
-
-Either way...
-- Any changes/fixes/enhancements to tmpl/css/js/config/example/webpack files are allowed.
-- Changes to publish.js might not be allowed.
-- Minor design changes are allowed, major ones (that change the essence of this design) might not.
-
-Aren't sure? Create an **Issue**.
+This project uses [SemVer](http://semver.org/) for versioning. See the available versions [here](https://github.com/AlexisPuga/jsdoc-template/tags).
 
 ## License
 
