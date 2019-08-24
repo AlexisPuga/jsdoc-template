@@ -29,7 +29,9 @@ Aren't sure? Create an **Issue**.
 
 #### Formatting
 
-There's not a predefined format, just try to be clear. 
+For **Issues** or **Pull Requests** there's not a predefined format, just try to be clear.
+
+For commits just check the previous commits to give you an idea.
 
 ### Development
 
