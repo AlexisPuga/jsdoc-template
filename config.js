@@ -35,6 +35,9 @@ module.exports = {
                  * {@link https://jsdoc.app/about-configuring-default-template.html#copying-static-files-to-the-output-directory}
                  * for details.
                  *
+                 * Note 2: If you pass an empty string, the prettify script
+                 * won't be loaded.
+                 *
                  * @type {?string}
                  */
                 prettify: 'css/tranquil-heart.min.css'
