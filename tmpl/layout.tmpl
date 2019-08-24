@@ -1,19 +1,18 @@
 <?js
+var config = env.conf;
+var templatesConfig = config.templates;
+var customTemplateConfig = templatesConfig.custom;
 
-var config = env.config;
-var customConfig = config['@custom'];
-var themes = customConfig.themes;
+var themes = customTemplateConfig.themes;
 var prettifyTheme = themes.prettify;
-var siteName = customConfig.siteName;
 
-var metadata = customConfig.metadata;
-var metadataTags = metadata.tags;
+var siteName = customTemplateConfig.siteName;
 
-var body = customConfig.body;
-var bodyTags = body.tags;
-
-var footer = customConfig.footer;
-var footerTags = footer.tags;
+var tags = customTemplateConfig.tags;
+var headTags = tags.head;
+var headerTags = tags.header;
+var bodyTags = tags.body;
+var footerTags = tags.footer;
 
 var currentMember = /\:(.+)/.test(title) ? RegExp.$1 : RegExp.$0;
 
@@ -31,16 +30,20 @@ var printTags = function (tags) {
 <html lang='en'>
 <head>
 	<meta charset='utf-8'/>
-	<title><?js= title + ' - ' + siteName ?></title>
+	<title><?js= title + (siteName ? ' - ' + siteName : '') ?></title>
 	<link type='text/css' rel='stylesheet' href='css/main.css'/>
-	<?js= printTags(metadataTags) ?>
+	<?js= printTags(headTags) ?>
 </head>
 <body data-gs='{"openPageHeader": "is-page-header-open", "searching": "is-searching"}'>
 	<div id='page-wrapper'>
 		<header id='page-header' data-gs-target='openPageHeader'>
+			<?js if (!headerTags.length) { ?>
 			<h1 id='page-title'>
 				<a href='/'><?js= siteName ?></a>
 			</h1>
+			<?js } else { ?>
+			<?js= printTags(headerTags) ?>
+			<?js } ?>
 			<nav id='content-nav'>
 				<header>
 					<div id='search'>
