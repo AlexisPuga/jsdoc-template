@@ -2,16 +2,17 @@
 
 A decent template for JSDoc, redesigned from [the default template](https://github.com/jsdoc/jsdoc/templates/default).
 
-- ![alt Large device preview](docs/images/pc.png)
-- ![alt Medium device preview](docs/images/tablet.png)
-- ![alt Small device preview](docs/images/phone.png)
-- ![alt Small device rotated preview](docs/images/phone-landscape.png)
+## Previews
+
+<a href="docs/images/pc.png"><img alt="Large device preview" src="docs/images/pc.png"/></a>
+<a href="docs/images/tablet.png"><img alt="Medium device preview" src="docs/images/tablet.png" height="660"/></a>
+<a href="docs/images/phone.png"><img alt="Small device preview" src="docs/images/phone.png" height="660"/></a>
 
 ## Try it
 
 Clone this repo, run ``` npm start ``` and wait until your default browser starts.
 
-When you finish, just press ``` CTRL + c ``` or close the console.
+When you finish, just press ``` CTRL + C ``` or close the console.
 
 ## Use it
 
@@ -48,7 +49,6 @@ module.exports = {
 #### Changing the theme for the prettified code and replacing it with my own (this time by using a JSON)
 
 ```json
-// jsdoc.config.json
 
 {
 	"templates": {
