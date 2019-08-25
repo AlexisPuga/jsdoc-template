@@ -44,7 +44,8 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin({
           cleanOnceBeforeBuildPatterns: [
-            path.join(process.cwd(), 'docs/demo/**/*')
+            'docs/demo/**/*',
+            '!docs/demo/README.md'
           ]
         }),
         new MiniCssExtractPlugin({
