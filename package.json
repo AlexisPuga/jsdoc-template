@@ -3,7 +3,11 @@
   "version": "0.0.0",
   "description": "A decent template for JSDoc.",
   "main": "publish.js",
-  "keywords": ["JSDoc", "template", "redesign"],
+  "keywords": [
+    "JSDoc",
+    "template",
+    "redesign"
+  ],
   "author": "Alexis Puga Ruíz",
   "license": "Apache-2.0",
   "scripts": {
