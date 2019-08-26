@@ -9,6 +9,7 @@ const template = require('jsdoc/template');
 
 const customTemplateConfig = (file => {
     delete require.cache[file];
+
     return require(file);
 })('./config.js');
 const htmlsafe = helper.htmlsafe;
