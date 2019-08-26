@@ -6,20 +6,20 @@ module.exports = {
      * All default options should be available.
      * @see {@link https://jsdoc.app/about-configuring-jsdoc.html#default-configuration-options}
      */
-    // plugins: [], 
+    // plugins: [],
     // source: [],
     // ...
-	templates: {
+    templates: {
         // cleverLinks: false,
         // monospaceLinks: false,
-		default: {
+        default: {
             includeDate: false
         },
         /**
          * Options for this template.
          * @type {!object}
          */
-		custom: {
+        custom: {
             /**
              * The name of your site.
              * @type {?string}
@@ -111,5 +111,5 @@ module.exports = {
                 ]
             }
         }
-	}
+    }
 };

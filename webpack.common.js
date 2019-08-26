@@ -43,17 +43,17 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin({
-          cleanOnceBeforeBuildPatterns: [
-            'docs/demo/**/*',
-            '!docs/demo/README.md'
-          ]
+            cleanOnceBeforeBuildPatterns: [
+                'docs/demo/**/*',
+                '!docs/demo/README.md'
+            ]
         }),
         new MiniCssExtractPlugin({
             filename: 'css/[name].css'
         }),
         new JsDocPlugin({
             conf: 'jsdoc.config.json',
-        	cwd: 'docs'
+            cwd: 'docs'
         })
     ],
     module: {
@@ -65,7 +65,7 @@ module.exports = {
                 loader: 'eslint-loader',
                 options: {
                     fix: true,
-                    cache: true,
+                    cache: false,
                     failOnWarning: true,
                     failOnError: true
                 }
