@@ -1,4 +1,3 @@
-/* global prettyPrint */
 (function() {
     var source = document.getElementsByClassName('prettyprint source linenums');
     var i = 0;
@@ -7,10 +6,6 @@
     var lines;
     var totalLines;
     var anchorHash;
-
-    if (typeof prettyPrint === 'function') {
-        prettyPrint();
-    }
 
     if (source && source[0]) {
         anchorHash = document.location.hash.substring(1);

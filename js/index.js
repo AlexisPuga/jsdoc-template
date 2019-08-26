@@ -1,3 +1,4 @@
+/* global prettyPrint */
 import '../css/jsdoc.css';
 import './states';
 import './buttonHandlers';
@@ -24,6 +25,12 @@ import './linenumber';
         });
 
         updateActiveLink();
+    });
+
+    helpers.on(window, 'load', function() {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
     });
 
     updateActiveLink();
