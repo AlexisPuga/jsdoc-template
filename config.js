@@ -25,6 +25,15 @@ module.exports = {
              * @type {?string}
              */
             siteName: 'JSDoc',
+            /**
+             * The url to your site.
+             *
+             * Note: If an empty string is given,
+             * the page heading won't be a link.
+             *
+             * @type {?string}
+             */
+            siteURL: '/',
             /** @type {!object} */
             themes: {
                 /**

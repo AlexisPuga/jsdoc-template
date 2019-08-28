@@ -7,6 +7,7 @@ var themes = customTemplateConfig.themes;
 var prettifyTheme = themes.prettify;
 
 var siteName = customTemplateConfig.siteName;
+var siteURL = customTemplateConfig.siteURL;
 
 var getTags = function (elementName, type) {
 	return (/default/i.test(type) ?
@@ -46,7 +47,7 @@ var printTagsByName = function (tagName) {
 		<header id='page-header' data-gs-target='openPageHeader'>
 			<?js if (!getTags('header').length) { ?>
 			<h1 id='page-title'>
-				<a href='/'><?js= siteName ?></a>
+				<?js= (siteURL ? '<a href="' + siteURL + '">' + siteName + '</a>' : siteName) ?>
 			</h1>
 			<?js } else { ?>
 			<?js= printTagsByName('header') ?>
