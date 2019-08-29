@@ -12,8 +12,8 @@
   "license": "Apache-2.0",
   "scripts": {
     "start": "npm install && NODE_ENV=test webpack-dev-server --config webpack.test.js",
+    "build": "npm install && NODE_ENV=production webpack --config webpack.prod.js",
     "development": "NODE_ENV=development webpack-dev-server --config webpack.dev.js",
-    "build": "NODE_ENV=production webpack --config webpack.prod.js",
     "lint": "eslint . --cache --fix",
     "test": "jsdoc docs/examples -t templates/silent -a all --pedantic",
     "precommit": "npm run lint && npm run test"
