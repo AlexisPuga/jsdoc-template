@@ -1,3 +1,4 @@
-docs/*
-static/**/main.*
-static/**/*.min.*
+/docs/**
+/static/**/main.*
+/static/**/*.min.*
+/bin/**
