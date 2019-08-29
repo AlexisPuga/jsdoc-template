@@ -6,5 +6,12 @@
 	},
 	"source": {
 		"include": ["examples"]
+	},
+	"templates": {
+		"default": {
+			"staticFiles": {
+				"include": ["files"]
+			}
+		}
 	}
 }
