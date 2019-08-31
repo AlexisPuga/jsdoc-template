@@ -40,7 +40,7 @@ updateGHPage() {
 	# remove the directory (git ignores empty directories).
 	git mv -f $GH_DIR/* .
 	# Commit new files.
-	git commit -m "REL: $RELEASE_VERSION" --no-verify
+	git commit -m "$RELEASE_VERSION" --no-verify
 	# Change to the current branch.
 	git checkout "$INITIAL_BRANCH"
 }
