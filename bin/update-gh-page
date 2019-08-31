@@ -26,8 +26,11 @@ updateGHPage() {
 	# Use the github-pages branch
 	git checkout "$GH_BRANCH"
 
-	# Remove all existing contents.
+	# Remove all existing files...
 	git rm -rf .
+	# except these...
+	git checkout HEAD -- .gitignore
+
 	# Get files from directory or, on error, unstage all removed files.
 	git checkout "$RELEASE_TAG" "$GH_DIR" || {
 		git reset HEAD -- .
@@ -36,11 +39,14 @@ updateGHPage() {
 		git checkout "$INITIAL_BRANCH"
 		exit 1
 	}
+
 	# Move the directory to the root and, implicity,
 	# remove the directory (git ignores empty directories).
 	git mv -f $GH_DIR/* .
+
 	# Commit new files.
 	git commit -m "$RELEASE_VERSION" --no-verify
+
 	# Change to the current branch.
 	git checkout "$INITIAL_BRANCH"
 }
