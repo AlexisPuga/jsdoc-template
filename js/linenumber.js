@@ -18,6 +18,7 @@
             lines[i].id = lineId;
             if (lineId === anchorHash) {
                 lines[i].className += ' selected';
+                lines[i].scrollIntoView();
             }
         }
     }
