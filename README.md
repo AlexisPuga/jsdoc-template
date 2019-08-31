@@ -2,6 +2,8 @@
 
 A decent template for JSDoc, redesigned from [the default template](https://github.com/jsdoc/jsdoc/templates/default).
 
+See the latest version of this template, [here](https://alexispuga.github.io/jsdoc-template).
+
 ## Previews
 
 <a href="docs/images/pc.png"><img alt="Large device preview" src="docs/images/pc.png"/></a>
