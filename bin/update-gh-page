@@ -1,0 +1,48 @@
+#!/bin/bash
+
+# See the "updateGhPage" function for usage.
+# Note: This script doesn't push any changes to the remote.
+
+# Source: https://stackoverflow.com/a/12694189
+ROOT="${BASH_SOURCE%/*}/.."
+# Source: https://stackoverflow.com/a/11868440
+INITIAL_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+cd "$ROOT"
+set -e
+
+##
+# Copy the required files of a release-tag to
+# a new branch and create a commit with the
+# given version as a message.
+#
+# Usage: ./update-gh-page <release version>
+updateGHPage() {
+	RELEASE_VERSION=$1
+	RELEASE_TAG="tags/v$RELEASE_VERSION@origin"
+	GH_BRANCH="gh-pages"
+	GH_DIR="docs/demo"
+
+	# Use the github-pages branch
+	git checkout "$GH_BRANCH"
+
+	# Remove all existing contents.
+	git rm -rf .
+	# Get files from directory or, on error, unstage all removed files.
+	git checkout "$RELEASE_TAG" "$GH_DIR" || {
+		git reset HEAD -- .
+		echo "ERROR: Reverting changes..."
+		echo "$RELEASE_TAG was not found. $RELEASE_VERSION is not a tagged version."
+		git checkout "$INITIAL_BRANCH"
+		exit 1
+	}
+	# Move the directory to the root and, implicity,
+	# remove the directory (git ignores empty directories).
+	git mv -f $GH_DIR/* .
+	# Commit new files.
+	git commit -m "REL: $RELEASE_VERSION" --no-verify
+	# Change to the current branch.
+	git checkout "$INITIAL_BRANCH"
+}
+
+updateGHPage $1
