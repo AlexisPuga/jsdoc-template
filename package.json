@@ -8,6 +8,12 @@
     "template",
     "redesign"
   ],
+  "homepage": "https://github.com/AlexisPuga/jsdoc-template",
+  "bugs": "https://github.com/AlexisPuga/jsdoc-template/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlexisPuga/jsdoc-template.git"
+  },
   "author": "Alexis Puga Ruíz",
   "license": "Apache-2.0",
   "scripts": {
