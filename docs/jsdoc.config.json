@@ -12,6 +12,9 @@
 			"staticFiles": {
 				"include": ["files"]
 			}
+		},
+		"custom": {
+			"siteURL": "https://github.com/AlexisPuga/jsdoc-template"
 		}
 	}
 }
