@@ -18,8 +18,8 @@ Development must be done on the master branch and should contain only **rebases*
 5. Release branches must not be rebased into master.
 
 ## Commit messages follow the rules below:
-1. Commit messages should follow the same rules specified in the contributing file ([here](./CONTRIBUTING.md#Commit-messages)).
-2. Commit messages for versioning should only contain **M.m.p**(**-dev**), or **REL: M.m.p**(**-dev**). *That is, any of the following is ok: 10.0.0, 10.0.5-dev, REL: 10.0.0, REL: 10.0.5-dev, ...*
+1. Commit messages should follow the same rules specified in the contributing file ([here](./CONTRIBUTING.md#Commit-messages)), except for the following:
+	1. Commit messages for versioning should only contain **M.m.p**(**-dev**). *That is: 10.0.0 and 10.0.5-dev are ok, but REL: 10.0.0 or REL: 10.0.5-dev are not.*
 
 ## How should all those rules look like:
 
