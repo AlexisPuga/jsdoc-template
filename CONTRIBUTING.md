@@ -35,19 +35,19 @@ Until now, there's not a predefined format, just try to be clear.
 ##### Commit messages
 Commit messages follow the rules below:
 1. Commits messages should use one of the following acronyms (taken from [numpy](https://numpy.org/devdocs/dev/development_workflow.html)) at the start of the message, uppercased and followed by ": ":
-	- API: an (incompatible) API change
-	- BENCH: changes related to benchmarks
-	- BLD: change related to building the project
-	- BUG: bug fix
-	- DEP: deprecate something, or remove a deprecated object
-	- DEV: development tool or utility
-	- DOC: documentation
-	- ENH: enhancement
-	- MAINT: maintenance commit (refactoring, typos, etc.)
-	- REV: revert an earlier commit
-	- STY: style fix (whitespace, ...)
-	- TST: addition or modification of tests
-	- REL: related to releasing the project
+	- **API**: an (incompatible) API change
+	- **BENCH**: changes related to benchmarks
+	- **BLD**: change related to building the project
+	- **BUG**: bug fix
+	- **DEP**: deprecate something, or remove a deprecated object
+	- **DEV**: development tool or utility
+	- **DOC**: documentation
+	- **ENH**: enhancement
+	- **MAINT**: maintenance commit (refactoring, typos, etc.)
+	- **REV**: revert an earlier commit
+	- **STY**: style fix (whitespace, ...)
+	- **TST**: addition or modification of tests
+	- **REL**: related to releasing the project
 2. Commits messages should follow [these rules](https://chris.beams.io/posts/git-commit/#seven-rules).
 	- Separate subject from body with a blank line
 	- Limit the subject line to 50 characters
