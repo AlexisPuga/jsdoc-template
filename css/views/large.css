@@ -1,35 +1,39 @@
-article > .member {
-	padding-bottom: 10%;
-}
+@media all and (min-width: 1360px) {
 
-#page-header-opener {
-	display: none;
-}
+	article > .member {
+		padding-bottom: 10%;
+	}
 
-#content-nav li.is-active::before {
-	content: '☞';
-	color: white;
-	position: absolute;
-	right: 100%;
-	margin-right: .3em;
-}
+	#page-header-opener {
+		display: none;
+	}
 
-#page-header {
-	background: #1c1d2a;
-}
+	#content-nav li.is-active::before {
+		content: '☞';
+		color: white;
+		position: absolute;
+		right: 100%;
+		margin-right: .3em;
+	}
 
-#page-header a b,
-#page-header a:hover,
-#page-header :focus,
-#page-header li.is-active a,
-#page-title a {
-	color: white;
-}
+	#page-header {
+		background: #1c1d2a;
+	}
 
-input[type='search'] {
-	background-color: rgba(255, 255, 255, .03);
-}
+	#page-header a b,
+	#page-header a:hover,
+	#page-header :focus,
+	#page-header li.is-active a,
+	#page-title a {
+		color: white;
+	}
 
-input[type='search']:focus {
-	background: rgba(255, 255, 255, 0.05);
+	input[type='search'] {
+		background-color: rgba(255, 255, 255, .03);
+	}
+
+	input[type='search']:focus {
+		background: rgba(255, 255, 255, 0.05);
+	}
+
 }
