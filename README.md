@@ -2,7 +2,17 @@
 
 A decent template for JSDoc, redesigned from [the default template](https://github.com/jsdoc/jsdoc/templates/default).
 
-See the latest version of this template, [here](https://alexispuga.github.io/jsdoc-template).
+[Check out the demo](https://alexispuga.github.io/jsdoc-template).
+
+## Use it
+
+### Installing it via npm
+[![NPM](https://nodei.co/npm/@alexispuga/jsdoc-template.png?compact=true)](https://npmjs.org/package/@alexispuga/jsdoc-template)
+
+```bash
+npm i @alexispuga/jsdoc-template
+jsdoc your/files -t ./node_modules/@alexispuga/jsdoc-template
+```
 
 ## Previews
 
@@ -10,22 +20,12 @@ See the latest version of this template, [here](https://alexispuga.github.io/jsd
 <a href="docs/images/tablet.png"><img alt="Medium device preview" src="docs/images/tablet.png" height="660"/></a>
 <a href="docs/images/phone.png"><img alt="Small device preview" src="docs/images/phone.png" height="660"/></a>
 
-## Try it
-
-Clone this repo, run ``` npm start ``` and wait until your default browser starts.
-
-When you finish, just press ``` CTRL + C ``` or close the console.
-
-## Use it
-
-Use ``` jsdoc path/to/your/files -t path/to/this/template ``` from a CLI.
-
 ## Customize it
 
 Make this template yours too:
 - Create a ``` jsdoc.config.js ``` file.
 - Modify it ([see all supported properties](config.js)).
-- Load it from jsdoc: ``` jsdoc path/to/files -t path/to/this/template -c path/to/jsdoc.config.js ```.
+- Load it from jsdoc: ``` jsdoc your/files -t this/template -c your/jsdoc.config.js ```.
 
 ### Examples
 
