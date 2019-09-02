@@ -1,4 +1,5 @@
 import '../css/jsdoc.css';
+import '../css/views/index.css';
 import './states';
 import './buttonHandlers';
 import './search';
