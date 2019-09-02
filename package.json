@@ -1,5 +1,5 @@
 {
-  "name": "jsdoc-template",
+  "name": "@alexispuga/jsdoc-template",
   "version": "1.0.0-dev",
   "description": "A decent template for JSDoc.",
   "main": "publish.js",
@@ -14,15 +14,23 @@
     "type": "git",
     "url": "https://github.com/AlexisPuga/jsdoc-template.git"
   },
+  "files": [
+    "static/**/main.*",
+    "static/**/*.min.*",
+    "tmpl/**/*",
+    "config.js"
+  ],
   "author": "Alexis Puga Ruíz",
   "license": "Apache-2.0",
   "scripts": {
-    "start": "npm install && NODE_ENV=test webpack-dev-server --config webpack.test.js",
-    "build": "npm install && NODE_ENV=production webpack --config webpack.prod.js",
+    "start": "NODE_ENV=test webpack-dev-server --config webpack.test.js",
+    "build": "NODE_ENV=production webpack --config webpack.prod.js",
     "development": "NODE_ENV=development webpack-dev-server --config webpack.dev.js",
     "lint": "eslint . --cache --fix",
     "test": "jsdoc docs/examples -t templates/silent -a all --pedantic",
-    "precommit": "npm run lint && npm run test"
+    "pretest": "npm run lint",
+    "precommit": "npm run test",
+    "prepare": "npm run precommit && npm run build"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
