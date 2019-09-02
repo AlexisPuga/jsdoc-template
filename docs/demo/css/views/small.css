@@ -1,52 +1,55 @@
-h4.name {
-	font-size: 150%;
-}
+@media all and (max-width: 767px) {
 
-.signature {
-	font-size: 100%;
-	vertical-align: baseline;
-}
+	h4.name {
+		font-size: 150%;
+	}
 
-.description:not(td) {
-	font-size: 100%;
-}
+	.signature {
+		font-size: 100%;
+		vertical-align: baseline;
+	}
 
-.doc > .member {
-	padding: 50px 0;
-	margin: 0 0;
-}
+	.description:not(td) {
+		font-size: 100%;
+	}
 
-thead {
-	display: none;
-}
+	.doc > .member {
+		padding: 50px 0;
+		margin: 0 0;
+	}
 
-.doc,
-#content > header {
-	padding: 30px;
-}
+	thead {
+		display: none;
+	}
 
-#content > header {
-	padding-right: 60px;
-}
+	.doc,
+	#content > header {
+		padding: 30px;
+	}
 
-:not(td) > table > tbody {
-	overflow-x: auto;
-	display: block;
-}
+	#content > header {
+		padding-right: 60px;
+	}
 
-.member > table > tbody {
-	width: calc(100vw - 60px);
-}
+	:not(td) > table > tbody {
+		overflow-x: auto;
+		display: block;
+	}
 
-.container-overview table > tbody {
-	width: calc(100vw - 30px);
-}
+	.member > table > tbody {
+		width: calc(100vw - 60px);
+	}
 
-td {
-	white-space: nowrap;
-}
+	.container-overview table > tbody {
+		width: calc(100vw - 30px);
+	}
 
-td.default::before {
-	content: 'Defaults to: ';
-}
+	td {
+		white-space: nowrap;
+	}
 
+	td.default::before {
+		content: 'Defaults to: ';
+	}
+
+}
