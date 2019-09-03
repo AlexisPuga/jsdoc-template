@@ -31,3 +31,5 @@ jobs:
           on:
             branch: /^releases\//
             condition: "$TRAVIS_TAG =~ v.+@origin"
+notifications:
+  email: false
