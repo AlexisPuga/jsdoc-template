@@ -32,6 +32,9 @@
     "precommit": "npm run test",
     "prepack": "npm run precommit && npm run build"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
     "copy": "^0.3.2",
