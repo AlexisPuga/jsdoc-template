@@ -7,8 +7,8 @@ jobs:
     include:
       - stage: "Test"
         branches:
-          ignore:
-            - gh-pages
+          only:
+            - master
         script:
           - "npm run lint"
           - "npm test"
