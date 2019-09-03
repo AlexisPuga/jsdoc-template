@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # See the "updateGhPage" function for usage.
-# Note: This script doesn't push any changes to the remote.
 
 # Source: https://stackoverflow.com/a/12694189
 ROOT="${BASH_SOURCE%/*}/.."
@@ -12,19 +11,37 @@ cd "$ROOT"
 set -e
 
 ##
-# Copy the required files of a release-tag to
+# Copy the required files from a release-commit to
 # a new branch and create a commit with the
 # given version as a message.
 #
-# Usage: ./update-gh-page <release version>
+# Usage: ./update-gh-page <release version|release tag> <deploy=false>
+#
+# <release version>: Some semantic version (1.0.1-rc.1, for example)
+# <release tag>: A tag in the format v<release version>@origin
+# <deploy>: If true, changes will be pushed to origin and the script
+# will check out the initial branch; if false, changes will be commited
+# but not pushed.
+#
+# Example [using a release version]: ./update-gh-page 1.0.0
+# Example [using a release tag]: ./update-gh-page v1.0.0@origin
+# Both examples result in the same, but any other value will
+# give weird results, in order to prevent undesired results:
+# Example [using a weird version]: ./update-gh-pages v1.0.0
+# Results in "vv1.0.0@origin"
 updateGHPage() {
 	RELEASE_VERSION=$1
-	RELEASE_TAG="tags/v$RELEASE_VERSION@origin"
+	DEPLOY=$2
+	RELEASE_TAG=$([[ "$RELEASE_VERSION" =~ v.+@origin ]] &&
+		echo "$RELEASE_VERSION" ||
+		echo "v$RELEASE_VERSION@origin"
+	)
+	RELEASE_COMMIT="tags/$RELEASE_TAG"
 	GH_BRANCH="gh-pages"
 	GH_DIR="docs/demo"
 
 	# Use the github-pages branch
-	git checkout "$GH_BRANCH"
+	git checkout "$GH_BRANCH" || exit 1
 
 	# Remove all existing files...
 	git rm -rf .
@@ -32,12 +49,9 @@ updateGHPage() {
 	git checkout HEAD -- .gitignore
 
 	# Get files from directory or, on error, unstage all removed files.
-	git checkout "$RELEASE_TAG" "$GH_DIR" || {
-		git reset HEAD -- .
-		echo "ERROR: Reverting changes..."
-		echo "$RELEASE_TAG was not found. $RELEASE_VERSION is not a tagged version."
-		git checkout "$INITIAL_BRANCH"
-		exit 1
+	git checkout "$RELEASE_COMMIT" "$GH_DIR" || {
+		echo "$RELEASE_COMMIT was not found. $RELEASE_VERSION is not a tagged version."
+		return 1
 	}
 
 	# Move the directory to the root and, implicity,
@@ -47,8 +61,21 @@ updateGHPage() {
 	# Commit new files.
 	git commit -m "$RELEASE_VERSION" --no-verify
 
-	# Change to the current branch.
-	git checkout "$INITIAL_BRANCH"
+	if [ "$DEPLOY" = "true" ]; then
+		# Push changes and ignore errors
+		git push -q > /dev/null 2>&1
+
+		# Change to the current branch.
+		git checkout "$INITIAL_BRANCH"
+	fi
+
+	return 0
 }
 
-updateGHPage $1
+updateGHPage $1 $2 || {
+	echo "ERROR: Reverting changes..."
+	git reset HEAD -- .
+	git checkout -- .
+	git checkout "$INITIAL_BRANCH"
+	exit 1
+}
