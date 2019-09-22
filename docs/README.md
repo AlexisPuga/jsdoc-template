@@ -6,8 +6,6 @@ This is a demo for [a decent template for JSDoc](https://github.com/AlexisPuga/j
 
 You can use this template in your projects too, just install it from NPM:
 
-<br/>
-
 <a id='npm-badge' href="https://npmjs.org/package/@alexispuga/jsdoc-template">
     <img src='https://nodei.co/npm/@alexispuga/jsdoc-template.png' alt='NPM'/>
 </a>
