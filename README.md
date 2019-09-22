@@ -16,9 +16,9 @@ jsdoc your/files -t ./node_modules/@alexispuga/jsdoc-template
 
 ## Previews
 
-<a href="docs/images/pc.png"><img alt="Large device preview" src="docs/images/pc.png"/></a>
-<a href="docs/images/tablet.png"><img alt="Medium device preview" src="docs/images/tablet.png" height="660"/></a>
-<a href="docs/images/phone.png"><img alt="Small device preview" src="docs/images/phone.png" height="660"/></a>
+<a href="previews/pc.png"><img alt="Large device preview" src="previews/pc.png"/></a>
+<a href="previews/tablet.png"><img alt="Medium device preview" src="previews/tablet.png" height="660"/></a>
+<a href="previews/phone.png"><img alt="Small device preview" src="previews/phone.png" height="660"/></a>
 
 ## Customize it
 
