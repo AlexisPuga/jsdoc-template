@@ -12,7 +12,7 @@ jobs:
         script:
           - "npm test"
       - stage: "Deploy"
-        script: skip
+        if: tag =~ v.+@origin
         deploy:
           - name: "Deploy to Github Pages"
             provider: pages
@@ -20,14 +20,10 @@ jobs:
             skip_cleanup: true
             keep_history: true
             script: bash bin/update-gh-page "$TRAVIS_TAG" true
-            on:
-              condition: "$TRAVIS_TAG =~ v.+@origin"
           - name: "Release to NPM"
             provider: npm
             email: $NPM_EMAIL
             api_key: $NPM_TOKEN
             skip_cleanup: true
-            on:
-              condition: "$TRAVIS_TAG =~ v.+@origin"
 notifications:
   email: false
