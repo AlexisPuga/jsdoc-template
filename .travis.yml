@@ -21,7 +21,6 @@ jobs:
             keep_history: true
             script: bash bin/update-gh-page "$TRAVIS_TAG" true
             on:
-              branch: /^releases\//
               condition: "$TRAVIS_TAG =~ v.+@origin"
           - name: "Release to NPM"
             provider: npm
@@ -29,7 +28,6 @@ jobs:
             api_key: $NPM_TOKEN
             skip_cleanup: true
             on:
-              branch: /^releases\//
               condition: "$TRAVIS_TAG =~ v.+@origin"
 notifications:
   email: false
