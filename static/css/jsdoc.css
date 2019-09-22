@@ -31,7 +31,7 @@ a:focus {
 	text-decoration: underline;
 }
 
-b {
+.doc b {
 	font-weight: normal;
 }
 
@@ -55,6 +55,10 @@ button {
 	border: 1px solid #f3f3f3;
 }
 
+img {
+	max-width: 100%;
+}
+
 button.is-active {
 	background: #f3f3f3;
 }
@@ -64,19 +68,28 @@ button.has-icon {
 	height: 60px;
 }
 
+h2, h3, h4, h5, h6 {
+	font-weight: bolder;
+}
+
 h1,
+article:not(.doc) h2,
+article:not(.doc) h3,
+article:not(.doc) h4,
 nav > h2,
 th, dt {
 	font-weight: normal;
 }
 
-h2, h3, h4, h5, h6 {
-	font-weight: bolder;
-}
-
+/**
+ * Since Readme files start with an h1 tag, h1 tags will
+ * be considered an h2 tag, h3 will be an h4, and so on...
+ * Because the readme file is part of "Home".
+ */
 h1, h2 { font-size: 200%; }
-h3, h4 { font-size: 150%; }
-h5, h6 { font-size: 125%; }
+h3, h4, #readme h2, #readme h3 { font-size: 150%; }
+h5, h6, #readme h4, #readme h5 { font-size: 125%; }
+h6 { font-size: 100%; }
 
 .doc h3,
 .doc h5,
@@ -94,11 +107,13 @@ nav > h3 {
 	font-size: 100%;
 }
 
-.doc h3,
-.doc h4,
-.doc h5,
+h1, h2, h3, h4, h5, h6,
 dt, th {
 	color: #1f1e26;
+}
+
+.doc h3, .doc h4, .doc h5,
+dt, th {
 	font-size: 100%;
 }
 
@@ -118,6 +133,7 @@ td {
 	word-break: normal;
 }
 
+#readme :not(pre) > code,
 tr:hover td,
 tr:focus td,
 tr:hover table th,
@@ -132,25 +148,17 @@ table table {
 	border-left: 2px solid rgba(0, 0, 0, .05);
 }
 
-table h6 {
-	color: #1f1e26;
-}
-
 code,
-table h6 {
+.doc table h6 {
 	font-size: 100%;
 }
 
-.doc code,
+code,
 h4.name,
 .doc h2 {
 	color: #1f1e26;
 	font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco,
 				Consolas, monospace;
-}
-
-code {
-	font-family: inherit;
 }
 
 #page-wrapper {
@@ -193,6 +201,7 @@ code {
 }
 
 #page-header,
+#page-header h3,
 #page-header a {
 	color: #777987;
 }
@@ -281,19 +290,32 @@ ol, ul, dl {
 	overflow: hidden;
 }
 
+#readme,
+.doc > .member {
+	max-width: 1024px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#readme {
+	padding: 7.5% 10% 10% 10%;
+}
+
 .doc > .member {
 	padding-bottom: 5%;
 	padding-top: 10%;
 	border-top: 1px solid #f3f3f3;
-	max-width: 1024px;
-	margin-left: auto;
-	margin-right: auto;
 }
 
 .member > *:not(h5):not(h4):not(h3):not(h2):not(.param-desc):not(:last-child) {
 	margin-bottom: 50px;
 }
 
+#readme h2, #readme h3 {
+	margin-top: 100px;
+}
+
+#readme h4, #readme h5, #readme h6,
 .member h2,
 .container-overview > :first-child:not(.description):not(.member),
 .container-overview > .member > :first-child:not(.description) {
@@ -324,7 +346,16 @@ table h6 {
 	padding-top: 20px;
 }
 
-br {
+#readme p:not(:first-of-type) {
+	margin-top: 20px;
+}
+
+#readme p {
+	max-width: 55em;
+}
+
+#readme br,
+.description br {
 	margin-bottom: 5%;
 }
 
@@ -336,6 +367,7 @@ br {
 	font-size: 80%;
 }
 
+#readme p:first-of-type,
 .description:not(td) {
 	font-size: 125%;
 }
@@ -362,15 +394,18 @@ h4.name {
 	font-size: 200%;
 }
 
-.doc {
+article {
 	border-top: 1px solid #f3f3f3;
 }
 
 .doc {
 	padding: 50px;
 	width: 100%;
-	word-break: break-all;
 	box-sizing: border-box;
+}
+
+.doc {
+	word-break: break-all;
 }
 
 .signature {
