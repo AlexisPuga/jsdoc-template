@@ -1,5 +1,6 @@
 {
 	"opts": {
+		"readme": "./README.md",
 		"template": "../",
 		"destination": "demo",
 		"recurse": true
@@ -14,7 +15,15 @@
 			}
 		},
 		"custom": {
-			"siteURL": "https://github.com/AlexisPuga/jsdoc-template"
+			"siteURL": "https://github.com/AlexisPuga/jsdoc-template",
+			"tags": {
+				"body": [
+					"<style>#npm-badge img{display:table}</style>"
+				],
+				"footer": [
+					"<p><b>THIS IS A DEMO</b>: All content was generated with examples taken from the <a href='https://jsdoc.app' rel='noopener nofollow'>JSDoc page.</a></p>"
+				]
+			}
 		}
 	}
 }
