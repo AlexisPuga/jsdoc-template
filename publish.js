@@ -226,8 +226,8 @@ function getPathFromDoclet({meta}) {
  */
 function resolveAllLinks(...args) {
     return helper.resolveLinks.apply(null, args)
-        .replace(/<a\s+href=("|')(.+\/\/.+)\1/g,
-            '<a href=$1$2$1 target="_blank" rel="noopener noreferrer"');
+        .replace(/<a\s+href=("|')([^/]+\/\/[^'"]+)("|')/g,
+            '<a href=$1$2$3 target="_blank" rel="noopener noreferrer"');
 }
 
 function generate(title, docs, filename, resolveLinks) {
