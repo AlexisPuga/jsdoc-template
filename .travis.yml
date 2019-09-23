@@ -6,6 +6,8 @@ install:
 stages:
   - name: test
     if: branch = master
+  - name: update-gh-page
+    if: tag =~ ^v.+@origin$
   - name: deploy-gh
     if: tag =~ ^v.+@origin$
   - name: release-npm
@@ -14,9 +16,10 @@ jobs:
     include:
       - stage: test
         script: "npm test"
+      - stage: update-gh-page
+        script: bash bin/update-gh-page "$TRAVIS_TAG" true
       - stage: deploy-gh
         name: "Deploy to Github"
-        script: bash bin/update-gh-page "$TRAVIS_TAG" true
         deploy:
           provider: pages
           github_token: $GITHUB_TOKEN
@@ -32,5 +35,8 @@ jobs:
           email: $NPM_EMAIL
           api_key: $NPM_TOKEN
           skip_cleanup: true
+          on:
+            tags: true
+            all_branches: true
 notifications:
   email: false
