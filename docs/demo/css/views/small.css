@@ -1,0 +1,55 @@
+@media all and (max-width: 767px) {
+
+	h4.name {
+		font-size: 150%;
+	}
+
+	.signature {
+		font-size: 100%;
+		vertical-align: baseline;
+	}
+
+	.description:not(td) {
+		font-size: 100%;
+	}
+
+	.doc > .member {
+		padding: 50px 0;
+		margin: 0 0;
+	}
+
+	thead {
+		display: none;
+	}
+
+	.doc,
+	#content > header {
+		padding: 30px;
+	}
+
+	#content > header {
+		padding-right: 60px;
+	}
+
+	:not(td) > table > tbody {
+		overflow-x: auto;
+		display: block;
+	}
+
+	.member > table > tbody {
+		width: calc(100vw - 60px);
+	}
+
+	.container-overview table > tbody {
+		width: calc(100vw - 30px);
+	}
+
+	td {
+		white-space: nowrap;
+	}
+
+	td.default::before {
+		content: 'Defaults to: ';
+	}
+
+}
