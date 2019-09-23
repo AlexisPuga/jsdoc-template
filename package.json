@@ -24,10 +24,11 @@
   "license": "Apache-2.0",
   "scripts": {
     "start": "NODE_ENV=test webpack-dev-server --config webpack.test.js",
-    "build": "NODE_ENV=production webpack --config webpack.prod.js",
+    "build": "NODE_ENV=production webpack --config webpack.prod.js && npm run minify-docs",
     "development": "NODE_ENV=development webpack-dev-server --config webpack.dev.js",
     "lint": "eslint . --cache",
     "test": "jsdoc docs/examples -t templates/silent -a all --pedantic",
+    "minify-docs": "html-minifier --input-dir docs/demo --output-dir docs/demo --file-ext html --minify-css true --minify-js true --collapse-whitespace --conservative-collapse --remove-comments",
     "pretest": "npm run lint",
     "precommit": "npm run test",
     "prepack": "npm run precommit && npm run build"
@@ -41,6 +42,7 @@
     "css-loader": "^3.0.0",
     "eslint": "^6.0.1",
     "eslint-loader": "^2.2.1",
+    "html-minifier": "^4.0.0",
     "jsdoc": "^3.6.3",
     "jsdoc-webpack-plugin": "git://github.com/AlexisPuga/jsdoc-webpack-plugin.git#release-0.2.0",
     "mini-css-extract-plugin": "^0.8.0",
