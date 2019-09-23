@@ -4,24 +4,28 @@ node_js:
 install:
   - npm ci
 stages:
-  - name: test
+  - name: "Test"
     if: branch = master
-  - name: deploy
+  - name: "Deploy to Github"
+    if: tag =~ ^v.+@origin$
+  - name: "Release to NPM"
     if: tag =~ ^v.+@origin$
 jobs:
     include:
-      - stage: test
+      - stage: "Test"
         script: "npm test"
-      - stage: deploy
+      - stage: "Deploy to Github"
         deploy:
-          - provider: pages
-            github_token: $GITHUB_TOKEN
-            skip_cleanup: true
-            keep_history: true
-            script: bash bin/update-gh-page "$TRAVIS_TAG" true
-          - provider: npm
-            email: $NPM_EMAIL
-            api_key: $NPM_TOKEN
-            skip_cleanup: true
+          provider: pages
+          github_token: $GITHUB_TOKEN
+          skip_cleanup: true
+          keep_history: true
+          script: bash bin/update-gh-page "$TRAVIS_TAG" true
+      - stage: "Release to NPM"
+        deploy:
+          provider: npm
+          email: $NPM_EMAIL
+          api_key: $NPM_TOKEN
+          skip_cleanup: true
 notifications:
   email: false
