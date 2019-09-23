@@ -40,6 +40,14 @@ updateGHPage() {
 	GH_BRANCH="gh-pages"
 	GH_DIR="docs/demo"
 
+	if [ "$TRAVIS" = "true" ]; then
+		# Source: https://stackoverflow.com/a/20338558
+		git config --replace-all remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
+	fi
+
+	# Pull branch
+    git fetch origin "$GH_BRANCH"
+
 	# Use the github-pages branch
 	git checkout "$GH_BRANCH" || exit 1
 
