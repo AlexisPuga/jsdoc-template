@@ -12,7 +12,7 @@ jobs:
         script:
           - "npm test"
       - stage: "Deploy"
-        if: tag =~ v.+@origin
+        if: tag =~ /^v.+@origin$/
         deploy:
           - name: "Deploy to Github Pages"
             provider: pages
