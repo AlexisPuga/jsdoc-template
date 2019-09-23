@@ -3,16 +3,16 @@ node_js:
   - "node"
 install:
   - npm ci
+stages:
+  - name: test
+    if: branch = master
+  - name: deploy
+    if: tag =~ v.+@origin
 jobs:
     include:
-      - stage: "Test"
-        branches:
-          only:
-            - master
-        script:
-          - "npm test"
-      - stage: "Deploy"
-        if: tag =~ /^v.+@origin$/
+      - stage: test
+        script: "npm test"
+      - stage: deploy
         deploy:
           - name: "Deploy to Github Pages"
             provider: pages
