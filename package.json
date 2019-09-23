@@ -1,6 +1,6 @@
 {
   "name": "@alexispuga/jsdoc-template",
-  "version": "1.0.1-rc.8",
+  "version": "1.0.1-rc.9",
   "description": "A decent template for JSDoc.",
   "main": "publish.js",
   "keywords": [
