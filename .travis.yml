@@ -7,21 +7,19 @@ stages:
   - name: test
     if: branch = master
   - name: deploy
-    if: tag =~ v.+@origin
+    if: tag =~ ^v.+@origin$
 jobs:
     include:
       - stage: test
         script: "npm test"
       - stage: deploy
         deploy:
-          - name: "Deploy to Github Pages"
-            provider: pages
+          - provider: pages
             github_token: $GITHUB_TOKEN
             skip_cleanup: true
             keep_history: true
             script: bash bin/update-gh-page "$TRAVIS_TAG" true
-          - name: "Release to NPM"
-            provider: npm
+          - provider: npm
             email: $NPM_EMAIL
             api_key: $NPM_TOKEN
             skip_cleanup: true
