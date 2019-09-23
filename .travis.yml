@@ -26,6 +26,7 @@ jobs:
             branch: gh-pages
       - stage: release-npm
         name: "Release to NPM"
+        script: skip
         deploy:
           provider: npm
           email: $NPM_EMAIL
