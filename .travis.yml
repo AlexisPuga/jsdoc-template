@@ -4,9 +4,9 @@ node_js:
 install:
   - npm ci
 stages:
-  - test
+  - name: test
     if: branch = master
-  - deploy
+  - name: deploy
     if: tag =~ v.+@origin
 jobs:
     include:
