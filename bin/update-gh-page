@@ -8,7 +8,7 @@ ROOT="${BASH_SOURCE%/*}/.."
 INITIAL_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
 cd "$ROOT"
-set -e
+set -ev
 
 ##
 # Copy the required files from a release-commit to
