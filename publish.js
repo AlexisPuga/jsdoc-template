@@ -220,14 +220,19 @@ function getPathFromDoclet({meta}) {
 }
 
 /**
- * Resolve links and set external ones with rel="noopener" and target="_blank"
- * attributes.
+ * Resolve links and add rel="noopener" and target="_blank"
+ * attributes to <a> tags that contain an external url and
+ * doesn't have any of this attributes.
  * @see {@link helpers.resolveLinks}
  */
 function resolveAllLinks(...args) {
     return helper.resolveLinks.apply(null, args)
-        .replace(/<a\s+href=("|')([^/]+\/\/[^'"]+)("|')/g,
-            '<a href=$1$2$3 target="_blank" rel="noopener noreferrer"');
+        .replace(/<a\s+href=("|')([^/]+\/\/[^'"]+)("|')([^>]*)/g, function($0,
+            quote, externalUrl, endQuote, attrs) {
+            return !/\s+(rel|target)=/i.test(attrs) ?
+                `<a href=${quote + externalUrl + endQuote} target="_blank" rel="noopener noreferrer"${attrs}` :
+                $0;
+        });
 }
 
 function generate(title, docs, filename, resolveLinks) {
