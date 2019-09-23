@@ -16,12 +16,14 @@ jobs:
         script: "npm test"
       - stage: deploy-gh
         name: "Deploy to Github"
+        script: bash bin/update-gh-page "$TRAVIS_TAG" true
         deploy:
           provider: pages
           github_token: $GITHUB_TOKEN
           skip_cleanup: true
           keep_history: true
-          script: bash bin/update-gh-page "$TRAVIS_TAG" true
+          on:
+            branch: gh-pages
       - stage: release-npm
         name: "Release to NPM"
         deploy:
