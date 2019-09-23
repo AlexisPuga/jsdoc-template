@@ -8,7 +8,7 @@ ROOT="${BASH_SOURCE%/*}/.."
 INITIAL_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
 cd "$ROOT"
-set -ev
+set -e
 
 ##
 # Copy the required files from a release-commit to
@@ -71,7 +71,7 @@ updateGHPage() {
 
 	if [ "$DEPLOY" = "true" ]; then
 		# Push changes and ignore errors
-		git push -q > /dev/null 2>&1
+		git push -u origin "$GH_BRANCH" -q > /dev/null 2>&1
 
 		# Change to the current branch.
 		git checkout "$INITIAL_BRANCH"
