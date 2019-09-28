@@ -347,7 +347,7 @@ h4.name {
 }
 
 .doc {
-	word-break: break-all;
+	overflow-wrap: break-word;
 }
 
 .signature {
