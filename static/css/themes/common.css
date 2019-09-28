@@ -1,0 +1,90 @@
+@import 'light.css';
+
+body, html,
+.signature-attributes,
+.type-signature,
+.variation,
+#page-header,
+#page-header h3,
+#page-header a,
+#content-nav li:not(.is-active) {
+	color: #5d6177;
+}
+
+a {
+	color: #1676aa;
+}
+
+#content-nav,
+#content-nav > header {
+	background: inherit;
+}
+
+dl {
+	border-left: 2px solid rgba(0, 0, 0, .1);
+}
+
+dt.tag-deprecated,
+dt.tag-deprecated + dd {
+	border-left: 2px solid red;
+}
+
+input[type='search'] {
+	color: inherit;
+}
+
+table table {
+	border-left: 2px solid rgba(0, 0, 0, .05);
+}
+
+article,
+#page-footer {
+	border-top: 1px solid rgba(0, 0, 0, .025);
+}
+
+.doc h3 {
+	border-bottom: 1px solid rgba(0, 0, 0, .025);
+}
+
+.doc > .member {
+	border-top: 1px solid rgba(0, 0, 0, .025);
+}
+
+button {
+	border: 1px solid rgba(0, 0, 0, .025);
+}
+
+#page-title,
+#page-title a,
+#page-header li.is-active a,
+#content-nav li::before {
+	color: inherit;
+}
+
+button.is-active,
+#page-header {
+	background: #181826;
+	color: #d8d8d8;
+}
+
+#page-header :focus,
+#page-header a:hover,
+#page-header a b {
+	color: white;
+}
+
+#content-nav li:not(.is-active) abbr,
+input[type='search'] {
+	background-color: rgba(255, 255, 255, .03);
+}
+
+#content-nav li:not(.is-active) abbr:hover,
+.prettyprint.linenums li.selected,
+input[type='search']:focus {
+	background: rgba(255, 255, 255, 0.05);
+}
+
+#page-header li.is-active abbr {
+	background: white;
+	color: black;
+}

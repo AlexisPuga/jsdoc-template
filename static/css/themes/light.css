@@ -1,0 +1,42 @@
+html {
+	background-color: #06060c;
+}
+
+td, th {
+	background-color: #f6f6f6;
+}
+
+body,
+button,
+.doc h3 {
+	background-color: #fbfbfb;
+}
+
+button,
+small a,
+#content-title,
+var, kbd, samp,
+code,
+h4.name a,
+.doc h2 a,
+.class-description,
+.summary,
+h1, h2, h3, h4, h5, h6,
+dt, th,
+var, kbd, samp,
+#readme :not(pre) > code,
+tr:hover td,
+tr:focus td,
+tr:hover table th,
+tr:focus table th {
+	color: #1f1e26;
+}
+
+var, kbd, samp,
+#readme :not(pre) > code,
+tr:hover td,
+tr:focus td,
+tr:hover table th,
+tr:focus table th {
+	background: #f3f3f3;
+}

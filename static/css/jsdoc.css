@@ -1,12 +1,8 @@
 @import 'reset.css';
 @import 'icons.css';
-
-html {
-	background-color: #f6f6f6;
-}
+@import 'themes/common.css';
 
 body {
-	background-color: #fbfbfb;
 	max-width: 1980px;
 	width: 100%;
 	margin: auto;
@@ -16,14 +12,12 @@ body {
 body,
 html {
 	font: 100% "DejaVu Sans", helvetica, arial, sans-serif;
-	color: #5a6374;
 	line-height: 1.7;
 	text-align: left;
 }
 
 a {
 	text-decoration: none;
-	color: #1676aa;
 }
 
 a:hover,
@@ -40,7 +34,6 @@ input[type='search'] {
 	padding: 20px;
 	font-family: inherit;
 	padding: 8px 20px;
-	color: inherit;
 }
 
 aside {
@@ -48,19 +41,12 @@ aside {
 }
 
 button {
-	background: #fbfbfb;
 	cursor: pointer;
 	border-radius: 0;
-	color: black;
-	border: 1px solid #f3f3f3;
 }
 
 img {
 	max-width: 100%;
-}
-
-button.is-active {
-	background: #f3f3f3;
 }
 
 button.has-icon {
@@ -107,9 +93,6 @@ nav > h3 {
 	font-size: 100%;
 }
 
-h1, h2, h3, h4, h5, h6,
-dt, th {
-	color: #1f1e26;
 }
 
 .doc h3, .doc h4, .doc h5,
@@ -124,7 +107,6 @@ table {
 }
 
 td, th {
-	background: #f6f6f6;
 	padding: 10px 20px;
 }
 
@@ -133,19 +115,11 @@ td {
 	word-break: normal;
 }
 
-#readme :not(pre) > code,
-tr:hover td,
-tr:focus td,
-tr:hover table th,
-tr:focus table th {
-	color: #1f1e26;
-	background: #f3f3f3;
 }
 
 table table {
 	margin-top: 20px;
 	padding-top: 0;
-	border-left: 2px solid rgba(0, 0, 0, .05);
 }
 
 code,
@@ -156,7 +130,6 @@ code,
 code,
 h4.name,
 .doc h2 {
-	color: #1f1e26;
 	font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco,
 				Consolas, monospace;
 }
@@ -196,37 +169,16 @@ h4.name,
   	box-sizing: border-box;
 }
 
-#page-header {
-	background-color: #f3f3f3;
-}
-
-#page-header,
-#page-header h3,
-#page-header a {
-	color: #777987;
-}
-
-#page-header a b,
-#page-header a:hover,
-#page-header :focus,
-#page-header li.is-active a,
-#page-title a,
-#content-title {
-	color: black;
-}
-
 #page-title {
 	padding: 20px 0;
 	text-align: center;
 }
 
 #content-nav {
-	background: inherit;
 	padding-bottom: 20px;
 }
 
 #content-nav > header {
-	background: inherit;
 	position: sticky;
 	top: -20px;
 	padding: 15px 0;
@@ -246,15 +198,10 @@ h4.name,
 #page-footer {
 	padding: 2.5% 5%;
 	text-align: right;
-	border-top: 1px solid #f3f3f3;
 }
 
 small {
 	font-size: 1rem;
-}
-
-small a {
-	color: black;
 }
 
 ol {
@@ -263,10 +210,6 @@ ol {
 
 ul {
 	list-style: disc;
-}
-
-dl {
-	border-left: 2px solid rgba(0, 0, 0, .1);
 }
 
 ol, ul, dl {
@@ -280,8 +223,6 @@ ol, ul, dl {
 	position: sticky;
 	top: 0;
 	z-index: 1;
-	background: #fbfbfb;
-	border-bottom: 1px solid #f3f3f3;
 	margin-bottom: -1px;
 }
 
@@ -304,7 +245,6 @@ ol, ul, dl {
 .doc > .member {
 	padding-bottom: 5%;
 	padding-top: 10%;
-	border-top: 1px solid #f3f3f3;
 }
 
 .member > *:not(h5):not(h4):not(h3):not(h2):not(.param-desc):not(:last-child) {
@@ -375,16 +315,13 @@ table h6 {
 .class-description,
 .summary {
 	font-size: 125%;
-	color: #1f1e26;
 }
 
 .signature-attributes {
 	font-size: 50%;
-	color: #5a6374;
 }
 
 .type-signature {
-	color: #5a6374;
 	font-size: 60%;
 	font-weight: lighter;
 	position: relative;
@@ -392,10 +329,6 @@ table h6 {
 
 h4.name {
 	font-size: 200%;
-}
-
-article {
-	border-top: 1px solid #f3f3f3;
 }
 
 .doc {
@@ -418,23 +351,14 @@ article {
 	text-decoration: line-through;
 }
 
-.variation {
-	color: #5a6374;
-}
-
 .important {
 	font-weight: bolder;
 }
 
 dt.tag-deprecated,
 dt.tag-deprecated + dd {
-	border-left: 2px solid red;
 	margin-left: -22px;
 	padding-left: 20px;
-}
-
-.prettyprint.linenums li.selected {
-	background-color: rgba(0, 0, 0, .1);
 }
 
 .is-searching nav ul:not(.matches),

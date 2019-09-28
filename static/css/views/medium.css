@@ -47,16 +47,11 @@
 
 	#content-nav li.is-active::before {
 		content: '☞ ';
-		color: black;
 	}
 
 	input[type='search'] {
 		padding-left: 15px;
 		padding-right: 60px;
-		background-color: rgba(0, 0, 0, .03);
 	}
 
-	input[type='search']:focus {
-		background: rgba(0, 0, 0, 0.05);
-	}
 }

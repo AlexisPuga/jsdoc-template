@@ -10,30 +10,8 @@
 
 	#content-nav li.is-active::before {
 		content: '☞';
-		color: white;
 		position: absolute;
 		right: 100%;
 		margin-right: .3em;
 	}
-
-	#page-header {
-		background: #1c1d2a;
-	}
-
-	#page-header a b,
-	#page-header a:hover,
-	#page-header :focus,
-	#page-header li.is-active a,
-	#page-title a {
-		color: white;
-	}
-
-	input[type='search'] {
-		background-color: rgba(255, 255, 255, .03);
-	}
-
-	input[type='search']:focus {
-		background: rgba(255, 255, 255, 0.05);
-	}
-
 }
