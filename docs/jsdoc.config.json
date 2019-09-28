@@ -18,10 +18,8 @@
 			"siteURL": "https://github.com/AlexisPuga/jsdoc-template",
 			"tags": {
 				"body": [
-					"<style>#npm-badge img{display:table}</style>"
-				],
-				"footer": [
-					"<p><b>THIS IS A DEMO</b>: All content was generated with examples taken from the <a href='https://jsdoc.app' rel='noopener nofollow'>JSDoc page.</a></p>"
+					"<style>#npm-badge img{display:table}#demo-advice{padding:20px;text-align:center;background:#06060c;color:white}</style>",
+					"<div id='demo-advice'><b>THIS IS A DEMO</b>: All content was generated with examples taken from the <a href='https://jsdoc.app' rel='noopener nofollow'>JSDoc page.</a></div>"
 				]
 			}
 		}
