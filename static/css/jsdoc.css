@@ -115,6 +115,13 @@ td {
 	word-break: normal;
 }
 
+var, kbd, samp {
+	font-style: normal;
+}
+
+var, kbd, samp,
+#readme :not(pre) > code {
+	padding: 0 10px;
 }
 
 table table {
@@ -127,6 +134,7 @@ code,
 	font-size: 100%;
 }
 
+var, kbd, samp,
 code,
 h4.name,
 .doc h2 {
