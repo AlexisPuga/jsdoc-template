@@ -325,12 +325,40 @@ function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
 
     if (items.length) {
         let itemsNav = '';
+        /**
+         * Drop the last 's' to convert plural into singular values.
+         * The object defines the exceptions.
+         *
+         * @type {!string}
+         */
+        let itemHeadingSingular = ({
+            Classes: 'Class'
+        })[itemHeading] || itemHeading.replace(/s$/i, '');
+        /**
+         * An abbreviation for `itemHeadingSingular`.
+         * Defaults to the 3 first characters of `itemHeadingSingular`.
+         *
+         * The object has a `key` with a known value for `itemHeadingSingular`
+         * and a `value` for the abbreviation (4 characters max).
+         *
+         * @type {!string}
+         */
+        let kindAbbr = ({
+            Module: 'Mod',
+            External: 'Ext',
+            Namespace: 'NS',
+            Class: 'Cls',
+            Interface: 'I/F',
+            Event: 'Evnt',
+            Mixin: 'Mix'
+        })[itemHeadingSingular] || itemHeadingSingular.slice(0, 3);
+        let kindAbbrTag = `<abbr title="${itemHeadingSingular}">${kindAbbr}</abbr>`;
 
         items.forEach(item => {
             let displayName;
 
             if ( !hasOwnProp.call(item, 'longname') ) {
-                itemsNav += `<li>${linktoFn('', item.name)}</li>`;
+                itemsNav += `<li>${kindAbbrTag} ${linktoFn('', item.name)}</li>`;
             }
             else if ( !hasOwnProp.call(itemsSeen, item.longname) ) {
                 if (env.conf.templates.default.useLongnameInNav) {
@@ -338,7 +366,7 @@ function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
                 } else {
                     displayName = item.name;
                 }
-                itemsNav += `<li>${linktoFn(item.longname, displayName.replace(/\b(module|event):/g, ''))}</li>`;
+                itemsNav += `<li>${kindAbbrTag} ${linktoFn(item.longname, displayName.replace(/\b(module|event):/g, ''))}</li>`;
 
                 itemsSeen[item.longname] = true;
             }
@@ -394,7 +422,7 @@ function buildNav(members) {
 
         members.globals.forEach(({kind, longname, name}) => {
             if ( kind !== 'typedef' && !hasOwnProp.call(seen, longname) ) {
-                globalNav += `<li>${linkto(longname, name)}</li>`;
+                globalNav += `<li><abbr title="Global">Glo</abbr> ${linkto(longname, name)}</li>`;
             }
             seen[longname] = true;
         });

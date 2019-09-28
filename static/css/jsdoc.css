@@ -28,6 +28,9 @@ a:focus {
 nav b {
 	font-weight: inherit;
 }
+
+#page-header li.is-active a {
+	font-weight: bolder;
 }
 
 input[type='search'] {
@@ -94,6 +97,8 @@ nav > h3 {
 	font-size: 100%;
 }
 
+nav > h3:not(:first-of-type) {
+	margin-top: 40px;
 }
 
 .doc h3, .doc h4, .doc h5,
@@ -198,6 +203,7 @@ h4.name,
 	list-style: none;
 	white-space: nowrap;
 	overflow: hidden;
+	padding-left: 0;
 }
 
 #content-nav li {
@@ -382,4 +388,18 @@ dt.tag-deprecated + dd {
 
 .is-searching nav h3 {
 	display: none;
+}
+
+#content-nav li abbr {
+	font-size: 50%;
+	text-decoration: none;
+	text-align: center;
+	font-weight: bolder;
+	text-transform: uppercase;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 1em;
+	width: 4em;
+	white-space: nowrap;
+	overflow: hidden;
 }

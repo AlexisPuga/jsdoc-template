@@ -8,10 +8,4 @@
 		display: none;
 	}
 
-	#content-nav li.is-active::before {
-		content: '☞';
-		position: absolute;
-		right: 100%;
-		margin-right: .3em;
-	}
 }
