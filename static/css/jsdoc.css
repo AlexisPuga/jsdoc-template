@@ -295,8 +295,8 @@ table h6 {
 	padding-top: 20px;
 }
 
-#readme p:not(:first-of-type) {
-	margin-top: 20px;
+#readme p {
+	margin-bottom: 2em;
 }
 
 #readme p {
