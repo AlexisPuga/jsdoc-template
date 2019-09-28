@@ -9,7 +9,7 @@ var self = this;
     <?js } ?>
 
     <?js if (data.kind !== 'namespace') { ?>
-    <h4 class="name"><?js= data.attribs + name + (data.signature || '') ?></h4>
+    <h4 class="name"><?js= data.attribs + "<a href='#" + id + "'>" + name + "</a>" + (data.signature || '') ?></h4>
     <?js } ?>
 
     <?js if (data.summary) { ?>
