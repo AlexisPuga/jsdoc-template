@@ -121,6 +121,7 @@ td, th {
 	padding: 10px 20px;
 }
 
+th,
 td {
 	vertical-align: top;
 	word-break: normal;
