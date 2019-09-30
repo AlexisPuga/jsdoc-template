@@ -131,7 +131,7 @@ var, kbd, samp {
 	font-style: normal;
 }
 
-var, kbd, samp,
+:not(th) > var, kbd, samp,
 #readme :not(pre) > code {
 	padding: 0 10px;
 }
@@ -408,4 +408,5 @@ dt.tag-deprecated + dd {
 	width: 4em;
 	white-space: nowrap;
 	overflow: hidden;
+	padding-top: 1px; /* Set text in the middle */
 }
