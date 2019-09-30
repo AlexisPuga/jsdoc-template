@@ -18,10 +18,6 @@
 		margin: 0 0;
 	}
 
-	thead {
-		display: none;
-	}
-
 	#readme,
 	.doc,
 	#content > header {
@@ -30,27 +26,6 @@
 
 	#content > header {
 		padding-right: 60px;
-	}
-
-	:not(td) > table > tbody {
-		overflow-x: auto;
-		display: block;
-	}
-
-	.member > table > tbody {
-		width: calc(100vw - 60px);
-	}
-
-	.container-overview table > tbody {
-		width: calc(100vw - 30px);
-	}
-
-	td {
-		white-space: nowrap;
-	}
-
-	td.default::before {
-		content: 'Defaults to: ';
 	}
 
 }
