@@ -37,16 +37,6 @@ module.exports = {
             /** @type {!object} */
             themes: {
                 /**
-                 * A theme for the template.
-                 * Supported values are: 'light' and 'dark'.
-                 * If a different value is passed, colors for the theme
-                 * will be removed.
-                 *
-                 * @since 1.1.0
-                 * @type {?string}
-                 */
-                site: 'light',
-                /**
                  * A valid url for the prettify theme.
                  *
                  * Note: If a relative url is passed, you should add static files to
