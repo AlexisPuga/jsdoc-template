@@ -355,7 +355,7 @@ table h6 {
 }
 
 #readme br,
-.description br {
+.member > .description br {
 	margin-bottom: 5%;
 }
 
