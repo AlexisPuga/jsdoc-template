@@ -1,6 +1,6 @@
 @import 'reset.css';
 @import 'icons.css';
-@import 'themes/common.css';
+@import 'themes/light.css';
 
 body {
 	max-width: 1980px;
@@ -112,7 +112,7 @@ dt, th {
 }
 
 table {
-	padding-top: 10px;
+	margin-top: 10px;
 	border-collapse: separate;
 	width: 100%;
 }
@@ -138,7 +138,6 @@ var, kbd, samp {
 
 table table {
 	margin-top: 20px;
-	padding-top: 0;
 }
 
 code,

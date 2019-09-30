@@ -1,4 +1,6 @@
-@import 'light.css';
+html {
+	background-color: #06060c;
+}
 
 body, html,
 .signature-attributes,
@@ -29,8 +31,12 @@ dt.tag-deprecated + dd {
 	border-left: 2px solid red;
 }
 
-input[type='search'] {
-	color: inherit;
+button,
+.doc h3,
+article,
+.doc > .member,
+#page-footer {
+	border: 1px solid rgba(0, 0, 0, .030);
 }
 
 table table {
@@ -38,22 +44,18 @@ table table {
 }
 
 article,
-#page-footer {
-	border-top: 1px solid rgba(0, 0, 0, .025);
+#page-footer,
+.doc > .member {
+	border-width: 1px 0 0 0;
 }
 
 .doc h3 {
-	border-bottom: 1px solid rgba(0, 0, 0, .025);
+	border-width: 0 0 1px 0;
 }
 
-.doc > .member {
-	border-top: 1px solid rgba(0, 0, 0, .025);
-}
-
-button {
-	border: 1px solid rgba(0, 0, 0, .025);
-}
-
+h4.name a,
+.doc h2 a,
+input[type='search'],
 #page-title,
 #page-title a,
 #page-header li.is-active a,
