@@ -1,0 +1,29 @@
+@import 'common.css';
+
+table {
+	background-color: #f6f6f6;
+}
+
+body,
+button,
+.doc h3 {
+	background-color: #fbfbfb;
+}
+
+button,
+small a,
+code,
+.class-description,
+.summary,
+h1, h2, h3, h4, h5, h6,
+dt, th,
+var, kbd, samp,
+tr:hover, tr:focus {
+	color: #1f1e26;
+}
+
+var, kbd, samp,
+#readme :not(pre) > code,
+tbody tr:hover *, tbody tr:focus * {
+	background: #f3f3f3;
+}
