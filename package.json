@@ -31,7 +31,7 @@
     "minify-docs": "html-minifier --input-dir docs/demo --output-dir docs/demo --file-ext html --minify-css true --minify-js true --collapse-whitespace --conservative-collapse --remove-comments",
     "pretest": "npm run lint",
     "precommit": "npm run test",
-    "prepack": "npm run precommit && npm run build"
+    "prepare": "npm run precommit && npm run build"
   },
   "publishConfig": {
     "access": "public"
