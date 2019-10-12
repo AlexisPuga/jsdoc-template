@@ -2,11 +2,9 @@
     var data = obj;
     var self = this;
 
-    data.forEach(function(example) {
-        if (example.caption) { ?>
-    <figure>
-        <figcaption class="code-caption"><?js= example.caption ?></figcaption>
-    <?js } ?>
+    data.forEach(function(example, i) { ?>
+    <figure class='example'>
+        <figcaption class="code-caption"><?js= 'Example ' + (i + 1) + ': ' + (example.caption || '') ?></figcaption>
         <pre class="prettyprint"><code><?js= self.htmlsafe(example.code) ?></code></pre>
     </figure>
 <?js
