@@ -39,7 +39,7 @@ var printTagsByName = function (tagName) {
 <head>
 	<meta charset='utf-8'/>
 	<title><?js= title + (siteName ? ' - ' + siteName : '') ?></title>
-	<link type='text/css' rel='stylesheet' href='css/main.css'/>
+	<link type='text/css' rel='stylesheet' href='css/jsdoc-template.css'/>
 	<?js= printTagsByName('head') ?>
 </head>
 <body data-gs='{"openPageHeader": "is-page-header-open", "searching": "is-searching"}'>
@@ -77,7 +77,7 @@ var printTagsByName = function (tagName) {
 			</footer>
 		</div>
 	</div>
-	<script src='js/main.js' async></script>
+	<script src='js/jsdoc-template.js' async></script>
 	<?js if (prettifyTheme) { ?>
 	<script src='js/prettify.min.js' async></script>
 	<link rel='stylesheet' type='text/css' href='<?js= prettifyTheme ?>'/>

@@ -15,7 +15,7 @@
     "url": "https://github.com/AlexisPuga/jsdoc-template.git"
   },
   "files": [
-    "static/**/main.*",
+    "static/**/jsdoc-template.*",
     "static/**/*.min.*",
     "tmpl/**/*",
     "config.js"

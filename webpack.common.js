@@ -11,7 +11,7 @@ const isDevMode = !/production|test/i.test(process.env.NODE_ENV);
 
 module.exports = {
     entry: {
-        main: './static/js/index.js'
+        'jsdoc-template': './static/js/index.js'
     },
     output: {
         path: path.resolve(__dirname, 'static'),
@@ -21,8 +21,8 @@ module.exports = {
         splitChunks: {
             cacheGroups: {
                 // Changing the key to another name will create another file.
-                main: {
-                    name: 'main',
+                'jsdoc-template': {
+                    name: 'jsdoc-template',
                     test: /\.css$/,
                     chunks: 'all',
                     enforce: true
