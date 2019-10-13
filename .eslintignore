@@ -1,4 +1,4 @@
 /docs/**
-/static/**/main.*
+/static/**/jsdoc-template.*
 /static/**/*.min.*
 /bin/**
