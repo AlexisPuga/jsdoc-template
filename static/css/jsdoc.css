@@ -127,11 +127,19 @@ td {
 	word-break: normal;
 }
 
-var, kbd, samp {
+var {
+	font-weight: bolder;
+}
+
+samp {
+	font-style: italic;
+}
+
+var, kbd {
 	font-style: normal;
 }
 
-:not(th) > var, kbd, samp,
+kbd, samp,
 #readme :not(pre) > code {
 	padding: 0 10px;
 }

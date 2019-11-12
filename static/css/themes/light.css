@@ -16,13 +16,13 @@ code,
 .class-description,
 .summary,
 h1, h2, h3, h4, h5, h6,
-dt, th,
-var, kbd, samp,
+dt, thead,
+kbd,
 tr:hover, tr:focus {
 	color: #1f1e26;
 }
 
-var, kbd, samp,
+kbd, samp,
 #readme :not(pre) > code,
 tbody tr:hover *, tbody tr:focus * {
 	background: #f3f3f3;
