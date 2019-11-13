@@ -1,12 +1,16 @@
+<div class='examples'>
 <?js
     var data = obj;
     var self = this;
 
-    data.forEach(function(example, i) { ?>
-    <figure class='example'>
-        <figcaption class="code-caption"><?js= 'Example ' + (i + 1) + ': ' + (example.caption || '') ?></figcaption>
+    data.forEach(function(example, i) {
+    var isCaptionUseless = !example.caption && data.length === 1;
+    ?>
+    <figure class='example<?js= i === 0 && !isCaptionUseless ? " first-of-type" : "" ?>'>
+        <figcaption class="code-caption"<?js= isCaptionUseless ? ' hidden' : '' ?>><?js= '<b>Example ' + (i + 1) + (example.caption ? ':</b> ' + example.caption : '.</b>') ?></figcaption>
         <pre class="prettyprint"><code><?js= self.htmlsafe(example.code) ?></code></pre>
     </figure>
 <?js
     });
 ?>
+</div>

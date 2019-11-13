@@ -275,7 +275,7 @@ ol, ul, dl {
 	padding-top: 10%;
 }
 
-.member > *:not(h5):not(h4):not(h3):not(h2):not(.param-desc):not(:last-child) {
+.member > *:not(h5):not(h4):not(h3):not(h2):not(.param-desc):not(:last-child):not(.example) {
 	margin-bottom: 50px;
 }
 
@@ -333,6 +333,23 @@ table h6 {
 	padding: 5%;
 	box-sizing: border-box;
 	font-size: 80%;
+	min-width: 720px;
+}
+
+.code-caption {
+	padding: 1rem 2rem;
+}
+
+.examples,
+.source-code-wrapper {
+	overflow: auto;
+}
+
+.example {
+	white-space: nowrap;
+	position: relative;
+	width: 100%;
+	display: block;
 }
 
 #readme p:first-of-type,
