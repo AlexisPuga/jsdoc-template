@@ -48,10 +48,6 @@
 
         <th>Type</th>
 
-        <?js if (props.hasAttributes) {?>
-        <th>Attributes</th>
-        <?js } ?>
-
         <?js if (props.hasDefault) {?>
         <th>Default</th>
         <?js } ?>
@@ -69,7 +65,20 @@
 
         <tr>
             <?js if (props.hasName) {?>
-                <th class="name" scope='row'><var><?js= prop.name ?></var></th>
+                <th class="name" scope='row'><var><?js= prop.name ?></var>
+                <br/>
+                <?js if (props.hasAttributes) {?>
+                    <td class="attributes">
+                    <?js if (prop.optional) { ?>
+                        [optional]
+                    <?js } ?>
+
+                    <?js if (prop.nullable) { ?>
+                        [nullable]
+                    <?js } ?>
+                    </td>
+                <?js } ?>
+                </th>
             <?js } ?>
 
             <td class="type">
@@ -77,18 +86,6 @@
                 <?js= self.partial('type.tmpl', prop.type.names) ?>
             <?js } ?>
             </td>
-
-            <?js if (props.hasAttributes) {?>
-                <td class="attributes">
-                <?js if (prop.optional) { ?>
-                    &lt;optional><br>
-                <?js } ?>
-
-                <?js if (prop.nullable) { ?>
-                    &lt;nullable><br>
-                <?js } ?>
-                </td>
-            <?js } ?>
 
             <?js if (props.hasDefault) {?>
                 <td class="default">

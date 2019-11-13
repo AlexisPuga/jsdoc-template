@@ -66,10 +66,6 @@
 
         <th>Type</th>
 
-        <?js if (params.hasAttributes) {?>
-        <th>Attributes</th>
-        <?js } ?>
-
         <?js if (params.hasDefault) {?>
         <th>Default</th>
         <?js } ?>
@@ -87,7 +83,23 @@
 
         <tr>
             <?js if (params.hasName) {?>
-                <th class="name" scope='row'><var><?js= param.name ?></var></th>
+                <th class="name" scope='row'><var><?js= param.name ?></var>
+                <br/>
+                <?js if (params.hasAttributes) {?>
+                    <sub class="attributes">
+                    <?js if (param.optional) { ?>
+                        [optional]
+                    <?js } ?>
+
+                    <?js if (param.nullable) { ?>
+                        [nullable]
+                    <?js } ?>
+
+                    <?js if (param.variable) { ?>
+                        [repeatable]
+                    <?js } ?>
+                    </sub>
+                <?js } ?></th>
             <?js } ?>
 
             <td class="type">
@@ -95,22 +107,6 @@
                 <?js= self.partial('type.tmpl', param.type.names) ?>
             <?js } ?>
             </td>
-
-            <?js if (params.hasAttributes) {?>
-                <td class="attributes">
-                <?js if (param.optional) { ?>
-                    &lt;optional><br>
-                <?js } ?>
-
-                <?js if (param.nullable) { ?>
-                    &lt;nullable><br>
-                <?js } ?>
-
-                <?js if (param.variable) { ?>
-                    &lt;repeatable><br>
-                <?js } ?>
-                </td>
-            <?js } ?>
 
             <?js if (params.hasDefault) {?>
                 <td class="default">

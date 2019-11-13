@@ -1,7 +1,8 @@
 <?js
     var data = obj;
     var self = this;
-    data.forEach(function(name, i) { ?>
-<span class="param-type"><?js= self.linkto(name, self.htmlsafe(name)) ?></span>
-<?js if (i < data.length-1) { ?>|<?js } ?>
+    data.forEach(function(name, i) {
+    var beautfiedName = name.replace(/Array\.<(.+)>/, '$1[]').replace('*', 'Any'); ?>
+<span class="param-type"><?js= self.linkto(beautfiedName, self.htmlsafe(beautfiedName)) ?></span>
+<?js if (i < data.length-1) { ?> or <?js } ?>
 <?js }); ?>
