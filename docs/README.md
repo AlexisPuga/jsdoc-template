@@ -1,4 +1,4 @@
-# JSDoc Template [![Build Status](https://travis-ci.org/AlexisPuga/jsdoc-template.svg?branch=add-travis)](https://travis-ci.org/AlexisPuga/jsdoc-template)
+# JSDoc Template [![Build Status](https://travis-ci.org/AlexisPuga/jsdoc-template.svg?branch=master)](https://travis-ci.org/AlexisPuga/jsdoc-template)
 
 This is a demo for [a decent template for JSDoc](https://github.com/AlexisPuga/jsdoc-template).
 

@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# See "updateJsdoc" for usage.
+
+# Source: https://stackoverflow.com/a/12694189
+ROOT="${BASH_SOURCE%/*}/.."
+
+cd "$ROOT"
+set -e
+source bin/helpers
+
+##
+# Update jsdoc to the latest version specified in package.json
+# and copy the source code to the root directory.
+# Note: You must resolve git conflicts manually.
+updateJsdoc() {
+	JSDOC_PATH='./node_modules/jsdoc'
+	JSDOC_TEMPLATE_PATH="$JSDOC_PATH/templates/default"
+	DESTINATION='./'
+
+	# npm install
+
+	# Update jsdoc.
+	npm update jsdoc
+
+	# Copy original files to modified ones.
+	cp -R "$JSDOC_TEMPLATE_PATH/publish.js" "$JSDOC_TEMPLATE_PATH/tmpl" "$DESTINATION"
+
+	# ... resolve git conflicts.
+	# ... commit changes.
+}
+
+updateJsdoc

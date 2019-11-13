@@ -100,7 +100,7 @@ function updateItemName(item) {
     let itemName = item.name || '';
 
     if (item.variable) {
-        itemName = `&hellip;${itemName}`;
+        itemName = `...${itemName}`;
     }
 
     if (attributes && attributes.length) {

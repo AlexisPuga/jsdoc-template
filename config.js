@@ -49,7 +49,7 @@ module.exports = {
                  *
                  * @type {?string}
                  */
-                prettify: 'css/tranquil-heart.min.css'
+                prettify: 'css/tomorrow.min.css'
             },
             /**
              * Raw tags that will be added to the document.
