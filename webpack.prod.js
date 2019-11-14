@@ -8,7 +8,7 @@ module.exports = merge(common, {
     devtool: 'source-map',
     plugins: [
         new HookWebpackPlugin('done', function copyBundles(compilation, callback) {
-            const from = ['static/js/main*', 'static/css/main*'];
+            const from = ['static/js/jsdoc-template*', 'static/css/jsdoc-template*'];
             const to = ['docs/demo/js', 'docs/demo/css'];
 
             Promise.all(from.map((src, i) => {
