@@ -14,9 +14,9 @@ source bin/helpers
 # and copy the source code to the root directory.
 # Note: You must resolve git conflicts manually.
 updateJsdoc() {
-	JSDOC_PATH='./node_modules/jsdoc'
-	JSDOC_TEMPLATE_PATH="$JSDOC_PATH/templates/default"
-	DESTINATION='./'
+	local JSDOC_PATH='./node_modules/jsdoc'
+	local JSDOC_TEMPLATE_PATH="$JSDOC_PATH/templates/default"
+	local DESTINATION='./'
 
 	# npm install
 
