@@ -43,8 +43,6 @@ updateGHPage() {
 
 	gitConfigure
 
-	git stash -u
-
 	# Pull branch
     git fetch origin "$GH_BRANCH"
 
