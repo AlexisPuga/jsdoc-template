@@ -70,7 +70,7 @@ updateGHPage() {
 
 	# Move the directory to the root and, implicity,
 	# remove the directory (git ignores empty directories).
-	git mv -f $GH_DIR/* .
+	git mv -f "$GH_DIR"/* .
 
 	# Commit new files.
 	git commit -m "$RELEASE_VERSION" --no-verify
