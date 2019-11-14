@@ -16,7 +16,7 @@ jobs:
         script: "npm test"
       - stage: deploy-gh
         name: "Deploy to Github"
-        script: bash bin/update-gh-page "$TRAVIS_TAG" false true
+        script: bash bin/update-gh-page "$TRAVIS_TAG"
         deploy:
           provider: pages
           github_token: $GITHUB_TOKEN
