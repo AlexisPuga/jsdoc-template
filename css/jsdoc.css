@@ -118,7 +118,7 @@ table {
 }
 
 td, th {
-	padding: 10px 2rem;
+	padding: 10px 20px;
 }
 
 th,
@@ -127,19 +127,11 @@ td {
 	word-break: normal;
 }
 
-var {
-	font-weight: bolder;
-}
-
-samp {
-	font-style: italic;
-}
-
-var, kbd {
+var, kbd, samp {
 	font-style: normal;
 }
 
-kbd, samp,
+:not(th) > var, kbd, samp,
 #readme :not(pre) > code {
 	padding: 0 10px;
 }
@@ -242,9 +234,9 @@ ul {
 
 ol, ul, dl {
 	box-sizing: border-box;
-	margin-top: 2rem;
-	margin-bottom: 2rem;
-	padding-left: 2rem;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding-left: 20px;
 }
 
 .doc > h3 {
@@ -275,7 +267,7 @@ ol, ul, dl {
 	padding-top: 10%;
 }
 
-.member > *:not(h5):not(h4):not(h3):not(h2):not(.param-desc):not(:last-child):not(.example-wrapper) {
+.member > *:not(h5):not(h4):not(h3):not(h2):not(.param-desc):not(:last-child) {
 	margin-bottom: 50px;
 }
 
@@ -303,15 +295,15 @@ ol, ul, dl {
 }
 
 dd {
-	margin-bottom: 2em;
+	margin-bottom: 20px;
 }
 
 dd + dd {
-	margin-top: -2em;
+	margin-top: -20px;
 }
 
 table h6 {
-	padding-top: 2em;
+	padding-top: 20px;
 }
 
 #readme p {
@@ -330,30 +322,9 @@ table h6 {
 .prettyprint {
 	white-space: pre-wrap;
 	overflow: hidden;
-	padding: 4% 5% 5% 5%;
+	padding: 5%;
 	box-sizing: border-box;
 	font-size: 80%;
-}
-
-.source-code-wrapper > .source {
-	min-width: 720px;
-}
-
-.code-caption {
-	padding: 1rem 2rem 0 2rem;
-}
-
-.example-wrapper,
-.source-code-wrapper {
-	overflow: auto;
-}
-
-.example {
-	position: relative;
-	width: 100%;
-	display: block;
-	margin-top: 2rem;
-	min-width: 720px;
 }
 
 #readme p:first-of-type,
@@ -406,8 +377,8 @@ h4.name {
 
 dt.tag-deprecated,
 dt.tag-deprecated + dd {
-	margin-left: calc(2rem -2px);
-	padding-left: 2rem;
+	margin-left: -22px;
+	padding-left: 20px;
 }
 
 .is-searching nav ul:not(.matches),
