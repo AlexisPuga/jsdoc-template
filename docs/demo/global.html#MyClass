@@ -3,7 +3,7 @@
 <head>
 	<meta charset='utf-8'/>
 	<title>Class: MyClass - JSDoc</title>
-	<link type='text/css' rel='stylesheet' href='css/main.css'/>
+	<link type='text/css' rel='stylesheet' href='css/jsdoc-template.css'/>
 	<meta name="viewport" content="width=device-width,
                         initial-scale=1"/>
 </head>
@@ -321,10 +321,10 @@
 			</footer>
 		</div>
 	</div>
-	<script src='js/main.js' async></script>
+	<script src='js/jsdoc-template.js' async></script>
 	
 	<script src='js/prettify.min.js' async></script>
-	<link rel='stylesheet' type='text/css' href='css/tranquil-heart.min.css'/>
+	<link rel='stylesheet' type='text/css' href='css/tomorrow.min.css'/>
 	
 	<style>#npm-badge img{display:table}#demo-advice{padding:20px;text-align:center;background:#06060c;color:white}</style><div id='demo-advice'><b>THIS IS A DEMO</b>: All content was generated with examples taken from the <a href='https://jsdoc.app' rel='noopener nofollow'>JSDoc page.</a></div>
 </body>

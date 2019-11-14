@@ -53,8 +53,8 @@ article,
 	border-width: 0 0 1px 0;
 }
 
-h4.name a,
-.doc h2 a,
+h4.name > a,
+.doc h2 > a,
 input[type='search'],
 #page-title,
 #page-title a,
