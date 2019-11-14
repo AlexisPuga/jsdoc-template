@@ -16,13 +16,15 @@ source bin/helpers
 # a new branch and create a commit with the
 # given version as a message.
 #
-# Usage: ./update-gh-page <release version|release tag> <deploy=false>
+# Usage: ./update-gh-page <release version|release tag> <deploy=false> <overwrite=false>
 #
 # <release version>: Some semantic version (1.0.1-rc.1, for example)
 # <release tag>: A tag in the format v<release version>@origin
 # <deploy>: If true, changes will be pushed to origin and the script
 # will check out the initial branch; if false, changes will be commited
 # but not pushed.
+# <overwrite>: If true, local changes on the "gh-pages" branch
+# will be overwritten with the fetched content instead of exit.
 #
 # Example [using a release version]: ./update-gh-page 1.0.0
 # Example [using a release tag]: ./update-gh-page v1.0.0@origin
@@ -33,6 +35,7 @@ source bin/helpers
 updateGHPage() {
 	RELEASE_VERSION=$1
 	DEPLOY=$2
+	OVERWRITE=$3
 	RELEASE_TAG=$([[ "$RELEASE_VERSION" =~ v.+@origin ]] &&
 		echo "$RELEASE_VERSION" ||
 		echo "v$RELEASE_VERSION@origin"
@@ -44,7 +47,12 @@ updateGHPage() {
 	gitConfigure
 
 	# Pull branch
-    git fetch origin "$GH_BRANCH"
+	git fetch origin "$GH_BRANCH"
+
+	if [ "$OVERWRITE" = "true" ]; then
+		# Reset to the fetched content.
+		git reset --hard origin/"$GH_BRANCH"
+	fi
 
 	# Use the github-pages branch
 	git checkout "$GH_BRANCH" || exit 1
@@ -78,7 +86,7 @@ updateGHPage() {
 	return 0
 }
 
-updateGHPage $1 $2 || {
+updateGHPage $1 $2 $3 || {
 	gitRevertChanges
 	git checkout "$INITIAL_BRANCH"
 	exit 1
