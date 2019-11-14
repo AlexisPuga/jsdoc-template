@@ -1,0 +1,35 @@
+@media all and (max-width: 767px) {
+
+	h4.name {
+		font-size: 150%;
+	}
+
+	.signature {
+		font-size: 100%;
+		vertical-align: baseline;
+	}
+
+	.description:not(td) {
+		font-size: 100%;
+	}
+
+	.doc > .member {
+		padding: 50px 0;
+		margin: 0 0;
+	}
+
+	#readme,
+	.doc,
+	#content > header {
+		padding: 30px;
+	}
+
+	#content > header {
+		padding-right: 60px;
+	}
+
+	.prettyprint {
+		padding: 2rem;
+	}
+
+}

@@ -1,0 +1,11 @@
+@media all and (min-width: 1360px) {
+
+	article > .member {
+		padding-bottom: 10%;
+	}
+
+	#page-header-opener {
+		display: none;
+	}
+
+}
