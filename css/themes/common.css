@@ -81,7 +81,6 @@ input[type='search'] {
 }
 
 #content-nav li:not(.is-active) abbr:hover,
-.prettyprint.linenums li.selected,
 input[type='search']:focus {
 	background: rgba(255, 255, 255, 0.05);
 }
