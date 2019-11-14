@@ -43,26 +43,31 @@ updateGHPage() {
 
 	gitConfigure
 
+	# Generate docs or fail.
+	# Note: Generated files should NOT be tracked by git.
+	npm run build || exit 1
+
 	# Pull branch
     git fetch origin "$GH_BRANCH"
 
 	# Use the github-pages branch
 	git checkout "$GH_BRANCH" || exit 1
 
-	# Remove all existing files...
+	# Remove all existing files (except untracked)...
 	git rm -rf .
 	# except these...
 	git checkout HEAD -- .gitignore
 
 	# Get files from directory or, on error, unstage all removed files.
-	git checkout "$RELEASE_COMMIT" "$GH_DIR" || {
-		echo "$RELEASE_COMMIT was not found. $RELEASE_VERSION is not a tagged version."
-		return 1
-	}
+	# git checkout "$RELEASE_COMMIT" "$GH_DIR" || {
+	#	echo "$RELEASE_COMMIT was not found. $RELEASE_VERSION is not a tagged version."
+	#	return 1
+	# }
 
-	# Move the directory to the root and, implicity,
-	# remove the directory (git ignores empty directories).
-	git mv -f "$GH_DIR"/* .
+	# Move the untracked directory to root.
+	mv -f "$GH_DIR"/* .
+	git reset -- .
+	git add .
 
 	# Commit new files.
 	git commit -m "$RELEASE_VERSION" --no-verify
