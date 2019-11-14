@@ -33,16 +33,16 @@ source bin/helpers
 # Example [using a weird version]: ./update-gh-pages v1.0.0
 # Results in "vv1.0.0@origin"
 updateGHPage() {
-	RELEASE_VERSION=$1
-	DEPLOY=$2
-	OVERWRITE=$3
-	RELEASE_TAG=$([[ "$RELEASE_VERSION" =~ v.+@origin ]] &&
+	local RELEASE_VERSION=$1
+	local DEPLOY=$2
+	local OVERWRITE=$3
+	local RELEASE_TAG=$([[ "$RELEASE_VERSION" =~ v.+@origin ]] &&
 		echo "$RELEASE_VERSION" ||
 		echo "v$RELEASE_VERSION@origin"
 	)
-	RELEASE_COMMIT="tags/$RELEASE_TAG"
-	GH_BRANCH="gh-pages"
-	GH_DIR="docs/demo"
+	local RELEASE_COMMIT="tags/$RELEASE_TAG"
+	local GH_BRANCH="gh-pages"
+	local GH_DIR="docs/demo"
 
 	gitConfigure
 
