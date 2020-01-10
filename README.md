@@ -1,6 +1,6 @@
 # JSDoc Template [![Build Status](https://travis-ci.org/AlexisPuga/jsdoc-template.svg?branch=master)](https://travis-ci.org/AlexisPuga/jsdoc-template)
 
-A decent template for JSDoc, redesigned from [the default template](https://github.com/jsdoc/jsdoc/templates/default).
+A decent template for JSDoc, redesigned from [the default template](https://github.com/jsdoc/jsdoc/tree/master/packages/jsdoc/templates/default).
 
 [Check out the demo](https://alexispuga.github.io/jsdoc-template).
 
