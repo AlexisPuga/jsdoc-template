@@ -68,7 +68,7 @@
                 <th class="name" scope='row'><var><?js= prop.name ?></var>
                 <br/>
                 <?js if (props.hasAttributes) {?>
-                    <td class="attributes">
+                    <sub class="attributes">
                     <?js if (prop.optional) { ?>
                         [optional]
                     <?js } ?>
@@ -76,7 +76,7 @@
                     <?js if (prop.nullable) { ?>
                         [nullable]
                     <?js } ?>
-                    </td>
+                    </sub>
                 <?js } ?>
                 </th>
             <?js } ?>
