@@ -275,6 +275,10 @@ ol, ul, dl {
 	padding-top: 10%;
 }
 
+h3 ~ .param-desc {
+	margin-bottom: 2rem;
+}
+
 .member > *:not(h5):not(h4):not(h3):not(h2):not(.param-desc):not(:last-child):not(.example-wrapper) {
 	margin-bottom: 50px;
 }
