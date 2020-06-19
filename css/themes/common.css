@@ -32,7 +32,7 @@ dt.tag-deprecated + dd {
 }
 
 button,
-.doc h3,
+.doc > h3,
 article,
 .doc > .member,
 #page-footer {
@@ -49,7 +49,7 @@ article,
 	border-width: 1px 0 0 0;
 }
 
-.doc h3 {
+.doc > h3 {
 	border-width: 0 0 1px 0;
 }
 
