@@ -1,13 +1,9 @@
 const path = require('path');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const TerserJSPlugin = require('terser-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const JsDocPlugin = require('jsdoc-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-
-/* eslint-disable-next-line no-process-env */
-const isDevMode = !/production|test/i.test(process.env.NODE_ENV);
 
 module.exports = {
     entry: {
@@ -30,15 +26,8 @@ module.exports = {
             }
         },
         minimizer: [
-            new TerserJSPlugin({
-                sourceMap: true
-            }),
-            new OptimizeCSSAssetsPlugin({
-                assetNameRegExp: /\.css/g,
-                cssProcessorPluginOptions: {
-                    preset: ['default']
-                }
-            })
+            '...', // terser
+            new CssMinimizerPlugin()
         ]
     },
     plugins: [
@@ -74,11 +63,8 @@ module.exports = {
                 exclude: /(node_modules|\.min)/,
                 use: [
                     {
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            hmr: isDevMode,
-                            reloadAll: true
-                        }
+                        loader: MiniCssExtractPlugin.loader
+                        // HMR should be done by webpack v5, by default.
                     },
                     'css-loader'
                 ]

@@ -1,5 +1,5 @@
 const HookWebpackPlugin = require('hook-webpack-plugin');
-const merge = require('webpack-merge');
+const {merge} = require('webpack-merge');
 const common = require('./webpack.common.js');
 const copy = require('copy');
 
