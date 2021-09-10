@@ -37,21 +37,21 @@
     "access": "public"
   },
   "devDependencies": {
-    "clean-webpack-plugin": "^3.0.0",
+    "clean-webpack-plugin": "^4.0.0",
     "copy": "^0.3.2",
-    "css-loader": "^5.2.6",
+    "css-loader": "^6.2.0",
     "css-minimizer-webpack-plugin": "^3.0.1",
     "eslint": "^7.28.0",
-    "eslint-loader": "^3.0.4",
+    "eslint-loader": "^4.0.2",
     "hook-webpack-plugin": "^1.0.1",
     "html-minifier": "^4.0.0",
     "jsdoc-webpack-plugin": "git://github.com/AlexisPuga/jsdoc-webpack-plugin.git#v0.2.0",
     "lodash": "^4.17.21",
-    "mini-css-extract-plugin": "^1.6.0",
+    "mini-css-extract-plugin": "^2.2.2",
     "taffydb": "^2.7.3",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2",
+    "webpack-dev-server": "^4.2.0",
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {

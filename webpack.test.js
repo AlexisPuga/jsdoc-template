@@ -7,11 +7,14 @@ module.exports = merge(common, {
     mode: 'development',
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: path.resolve(__dirname, 'docs/demo'),
-        compress: true,
+        static: {
+            directory: path.resolve(__dirname, 'docs/demo')
+        },
         port: 9000,
         host: 'localhost', // 0.0.0.0
-        writeToDisk: false,
+        devMiddleware: {
+            writeToDisk: false
+        },
         open: true
     }
 });
