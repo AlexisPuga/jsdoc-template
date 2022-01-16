@@ -1,6 +1,6 @@
 const path = require('path');
 
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin').default;
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const JsDocPlugin = require('jsdoc-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');

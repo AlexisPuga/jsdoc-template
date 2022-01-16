@@ -47,7 +47,7 @@
     "html-minifier": "^4.0.0",
     "jsdoc-webpack-plugin": "git://github.com/AlexisPuga/jsdoc-webpack-plugin.git#v0.2.0",
     "lodash": "^4.17.21",
-    "mini-css-extract-plugin": "^2.2.2",
+    "mini-css-extract-plugin": "^2.5.0",
     "taffydb": "^2.7.3",
     "webpack": "^5.66.0",
     "webpack-cli": "^4.9.1",
