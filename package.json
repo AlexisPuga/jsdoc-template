@@ -23,9 +23,9 @@
   "author": "Alexis Puga Ruíz",
   "license": "Apache-2.0",
   "scripts": {
-    "start": "NODE_ENV=test webpack serve --config webpack.test.js",
-    "build": "NODE_ENV=production webpack --config webpack.prod.js && npm run minify-docs",
-    "development": "NODE_ENV=development webpack serve --config webpack.dev.js",
+    "start": "NODE_ENV=test NODE_OPTIONS=--openssl-legacy-provider webpack serve --config webpack.test.js",
+    "build": "NODE_ENV=production NODE_OPTIONS=--openssl-legacy-provider webpack --config webpack.prod.js && npm run minify-docs",
+    "development": "NODE_ENV=development NODE_OPTIONS=--openssl-legacy-provider webpack serve --config webpack.dev.js",
     "lint": "eslint . --cache",
     "test": "jsdoc docs/examples -t templates/silent -a all --pedantic",
     "minify-docs": "html-minifier --input-dir docs/demo --output-dir docs/demo --file-ext html --minify-css true --minify-js true --collapse-whitespace --conservative-collapse --remove-comments",
