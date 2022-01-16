@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin').default;
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const JsDocPlugin = require('jsdoc-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const EslintWebpackPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -31,6 +32,13 @@ module.exports = {
         ]
     },
     plugins: [
+        new EslintWebpackPlugin({
+            fix: true,
+            cache: false,
+            failOnWarning: true,
+            failOnError: true,
+            exclude: ['node_modules', '*.min']
+        }),
         new CleanWebpackPlugin({
             cleanOnceBeforeBuildPatterns: [
                 'docs/demo/**/*'
@@ -46,18 +54,6 @@ module.exports = {
     ],
     module: {
         rules: [
-            {
-                enforce: 'pre',
-                test: /\.js$/,
-                exclude: /(node_modules|\.min)/,
-                loader: 'eslint-loader',
-                options: {
-                    fix: true,
-                    cache: false,
-                    failOnWarning: true,
-                    failOnError: true
-                }
-            },
             {
                 test: /\.css$/,
                 exclude: /(node_modules|\.min)/,
