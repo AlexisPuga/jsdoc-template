@@ -5,7 +5,9 @@ html {
 body, html,
 .signature-attributes,
 .type-signature,
-.variation {
+.variation,
+th,
+.doc table tr:not(:hover) h6 {
 	color: #5d6177;
 }
 
@@ -39,8 +41,9 @@ button,
 .doc > h3,
 article,
 .doc > .member,
-#page-footer {
-	border: 1px solid rgba(0, 0, 0, .030);
+#page-footer,
+#content > header {
+	border: 1px solid rgba(0, 0, 0, .05);
 }
 
 table table {
@@ -53,7 +56,12 @@ article,
 	border-width: 1px 0 0 0;
 }
 
-.doc > h3 {
+article:first-of-type {
+	border: 0;
+}
+
+.doc > h3,
+#content > header {
 	border-width: 0 0 1px 0;
 }
 

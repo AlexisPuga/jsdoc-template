@@ -21,7 +21,7 @@
 	#readme,
 	.doc,
 	#content > header {
-		padding: 30px;
+		padding: 2em;
 	}
 
 	#content > header {
@@ -30,6 +30,10 @@
 
 	.prettyprint {
 		padding: 2rem;
+	}
+
+	#page-footer {
+		padding: 2em;
 	}
 
 }

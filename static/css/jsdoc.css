@@ -35,9 +35,9 @@ nav b {
 
 input[type='search'] {
 	width: 100%;
-	padding: 20px;
+	padding: 2em;
 	font-family: inherit;
-	padding: 8px 20px;
+	padding: 8px 2em;
 }
 
 aside {
@@ -58,39 +58,32 @@ button.has-icon {
 	height: 60px;
 }
 
-h2, h3, h4, h5, h6 {
+th,
+h1, h2, h3, h4, h5, h6 {
 	font-weight: bolder;
 }
 
-h1,
-article:not(.doc) h2,
-article:not(.doc) h3,
-article:not(.doc) h4,
-nav > h2,
-th, dt {
+dt,
+#readme h2,
+#readme h3,
+#readme h4,
+#readme h5,
+#readme h6 {
 	font-weight: normal;
 }
 
-/**
- * Since Readme files start with an h1 tag, h1 tags will
- * be considered an h2 tag, h3 will be an h4, and so on...
- * Because the readme file is part of "Home".
- */
 h1, h2 { font-size: 200%; }
-h3, h4, #readme h2, #readme h3 { font-size: 150%; }
-h5, h6, #readme h4, #readme h5 { font-size: 125%; }
-h6 { font-size: 100%; }
-
-.doc h3,
-.doc h5,
-.doc h6,
-nav > h3 {
-	text-transform: uppercase;
-}
+h3, h4, h5, h6 { font-size: 100%; }
+#readme h2 { font-size: 160%; }
+#readme h3 { font-size: 140%; }
+#readme h4 { font-size: 120%; }
+#readme h5 { font-size: 110%; }
+#readme h6 { font-size: 100%; }
 
 nav > h2 {
-	font-size: 150%;
-	padding: 20px 0;
+	font-size: 100%;
+	padding: 1em 0;
+	margin-top: 1em;
 }
 
 nav > h3 {
@@ -98,10 +91,10 @@ nav > h3 {
 }
 
 nav > h3:not(:first-of-type) {
-	margin-top: 40px;
+	margin-top: 2em;
 }
 
-.doc h3, .doc h4, .doc h5,
+.doc > h3, .doc > h4, .doc > h5,
 dt, th {
 	font-size: 100%;
 }
@@ -145,7 +138,7 @@ kbd, samp,
 }
 
 table table {
-	margin-top: 20px;
+	margin-top: 2em;
 }
 
 code,
@@ -177,7 +170,9 @@ h4.name,
 }
 
 #content > header {
-	padding: 50px;
+	font-size: 50%;
+	padding: 2em 4rem;
+	margin-bottom: 4em;
 }
 
 .has-icon {
@@ -189,7 +184,7 @@ h4.name,
 #page-header {
 	position: sticky;
 	top: 0;
-	padding: 20px;
+	padding: 2em;
 	width: 320px;
 	height: 100vh;
 	overflow-y: auto;
@@ -197,17 +192,14 @@ h4.name,
 }
 
 #page-title {
-	padding: 20px 0;
+	font-size: 150%;
+	padding: 2em 0;
 	text-align: center;
-}
-
-#content-nav {
-	padding-bottom: 20px;
 }
 
 #content-nav > header {
 	position: sticky;
-	top: -20px;
+	top: -2em;
 	padding: 15px 0;
 	z-index: 1;
 }
@@ -242,9 +234,9 @@ ul {
 
 ol, ul, dl {
 	box-sizing: border-box;
-	margin-top: 2rem;
-	margin-bottom: 2rem;
-	padding-left: 2rem;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	padding-left: 1em;
 }
 
 .doc > h3 {
@@ -280,18 +272,18 @@ h3 ~ .param-desc {
 }
 
 .member > *:not(h5):not(h4):not(h3):not(h2):not(.param-desc):not(:last-child):not(.example-wrapper) {
-	margin-bottom: 50px;
+	margin-bottom: 4rem;
 }
 
 #readme h2, #readme h3 {
-	margin-top: 100px;
+	margin-top: 4em;
 }
 
 #readme h4, #readme h5, #readme h6,
 .member h2,
 .container-overview > :first-child:not(.description):not(.member),
 .container-overview > .member > :first-child:not(.description) {
-	margin-top: 50px;
+	margin-top: 4rem;
 }
 
 .doc:not([data-kind='globalobj']) > h3 {
@@ -299,7 +291,7 @@ h3 ~ .param-desc {
 }
 
 .container-overview > *:not(h5):not(h4):not(h3):not(h2):not(:last-child) {
-	margin-bottom: 50px;
+	margin-bottom: 2em;
 }
 
 .member > *:last-child {
@@ -385,7 +377,7 @@ h4.name {
 }
 
 .doc {
-	padding: 50px;
+	padding: 4rem;
 	width: 100%;
 	box-sizing: border-box;
 }
@@ -410,8 +402,8 @@ h4.name {
 
 dt.tag-deprecated,
 dt.tag-deprecated + dd {
-	margin-left: calc(-2rem -2px);
-	padding-left: 2rem;
+	margin-left: calc(-2rem - 2px);
+	padding-left: 1rem;
 }
 
 .is-searching nav ul:not(.matches),
