@@ -20,4 +20,4 @@ jobs:
           node-version: 16
       - run: npm ci
       - run: npm test
-      - run: bash ./bin/update-gh-page ${{ github.event.release.tag_name }} true # push
+      - run: ./bin/update-gh-page ${{ github.event.release.tag_name }} true # push
