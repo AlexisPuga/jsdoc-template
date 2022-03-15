@@ -18,6 +18,12 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16
+
+      # Based on github.community/t/how-to-get-just-the-tag-name/16241/7
+      - name: Get version
+        id: get_version
+        run: echo ::set-output name=TAG::${GITHUB_REF#refs/tags/}
+
       - run: npm ci
       - run: npm test
-      - run: ./bin/update-gh-page ${{ github.event.release.tag_name }} true # push
+      - run: ./bin/update-gh-page ${{ steps.get_version.outputs.TAG }} true # push
