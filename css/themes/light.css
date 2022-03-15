@@ -7,7 +7,7 @@ table,
 
 body,
 button,
-.doc h3,
+.doc > h3,
 .prettyprint.linenums li.selected {
 	background-color: #fbfbfb;
 }
@@ -20,7 +20,7 @@ code,
 h1, h2, h3, h4, h5, h6,
 dt, thead,
 kbd,
-tr:hover, tr:focus,
+tr:hover *, tr:focus *,
 .example:hover .code-caption {
 	color: #1f1e26;
 }
