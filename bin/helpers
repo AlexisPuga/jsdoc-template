@@ -4,7 +4,7 @@
 INITIAL_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
 gitConfigure() {
-	if [ "$TRAVIS" = "true" ]; then
+	if [ "$CI" = "true" ]; then
 		# Source: https://stackoverflow.com/a/20338558
 		git config --replace-all remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
 	fi

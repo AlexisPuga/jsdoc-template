@@ -1,4 +1,4 @@
-# JSDoc Template ![CI](https://github.com/AlexisPuga/jsdoc-template/actions/workflows/ci.yml/badge.svg) [![Build Status](https://travis-ci.org/AlexisPuga/jsdoc-template.svg?branch=master)](https://travis-ci.org/AlexisPuga/jsdoc-template)
+# JSDoc Template ![CI](https://github.com/AlexisPuga/jsdoc-template/actions/workflows/ci.yml/badge.svg)
 
 A decent template for JSDoc, redesigned from [the default template](https://github.com/jsdoc/jsdoc/tree/master/packages/jsdoc/templates/default).
 
