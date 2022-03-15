@@ -1,0 +1,21 @@
+# This workflow will run tests using node and then run ./bin/update-gh-page when release tags are pushed to build code and deploy it to github pages.
+# For more information see: https://help.github.com/actions/language-and-framework-guides/publishing-nodejs-packages
+
+name: Github Pages Deployment
+
+on:
+  push:
+    tags:
+      - 'v*.*.*@origin'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - run: npm ci
+      - run: npm test
+      - run: bash ./bin/update-gh-page ${{ github.event.release.tag_name }} true # push
