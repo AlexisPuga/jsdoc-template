@@ -170,9 +170,14 @@ h4.name,
 }
 
 #content > header {
+	position: sticky;
+	top: 0;
+	z-index: 1;
 	font-size: 50%;
-	padding: 2em 4rem;
+	padding: 2em 2rem;
 	margin-bottom: 4em;
+	height: 60px; /* Same as #page-header-opener */
+	box-sizing: border-box;
 }
 
 .has-icon {
@@ -240,9 +245,6 @@ ol, ul, dl {
 }
 
 .doc > h3 {
-	position: sticky;
-	top: 0;
-	z-index: 1;
 	margin-bottom: -1px;
 }
 
