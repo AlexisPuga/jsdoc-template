@@ -1,6 +1,6 @@
 @import 'common.css';
 
-table,
+th,
 .code-caption {
 	background-color: #f6f6f6;
 }
@@ -27,7 +27,6 @@ tr:hover *, tr:focus *,
 
 kbd, samp,
 #readme :not(pre) > code,
-tbody tr:hover *, tbody tr:focus *,
 .example:hover > * {
 	background: #f3f3f3;
 }
