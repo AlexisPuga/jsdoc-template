@@ -1,14 +1,12 @@
 @import 'common.css';
 
-th,
-.code-caption {
+th {
 	background-color: #f6f6f6;
 }
 
 body,
 button,
-#content > header,
-.prettyprint.linenums li.selected {
+#content > header {
 	background-color: #fbfbfb;
 }
 
@@ -27,6 +25,6 @@ tr:hover *, tr:focus *,
 
 kbd, samp,
 #readme :not(pre) > code,
-.example:hover > * {
+.prettyprint.linenums li.selected {
 	background: #f3f3f3;
 }
