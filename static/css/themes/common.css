@@ -46,7 +46,9 @@ article,
 	border: 1px solid rgba(0, 0, 0, .05);
 }
 
-table {
+table,
+.example,
+#readme .prettyprint {
 	border: 2px solid rgba(0, 0, 0, .05);
 }
 

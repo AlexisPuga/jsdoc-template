@@ -335,6 +335,7 @@ table h6 {
 
 .code-caption {
 	padding: 1rem 2rem 0 2rem;
+	font-weight: bold;
 }
 
 .example-wrapper,
@@ -348,6 +349,7 @@ table h6 {
 	display: block;
 	margin-top: 2rem;
 	min-width: 720px;
+	box-sizing: border-box;
 }
 
 #readme p:first-of-type,
