@@ -7,7 +7,7 @@ table,
 
 body,
 button,
-.doc > h3,
+#content > header,
 .prettyprint.linenums li.selected {
 	background-color: #fbfbfb;
 }
