@@ -111,7 +111,7 @@ table {
 }
 
 td, th {
-	padding: 10px 2rem;
+	padding: 1rem;
 }
 
 th,
@@ -135,10 +135,6 @@ var, kbd {
 kbd, samp,
 #readme :not(pre) > code {
 	padding: 0 10px;
-}
-
-table table {
-	margin-top: 2em;
 }
 
 code,
