@@ -236,7 +236,7 @@ ol, ul, dl {
 	box-sizing: border-box;
 	margin-top: 1em;
 	margin-bottom: 1em;
-	padding-left: 1em;
+	padding-left: 2em;
 }
 
 .doc > h3 {
@@ -403,7 +403,7 @@ h4.name {
 dt.tag-deprecated,
 dt.tag-deprecated + dd {
 	margin-left: calc(-2rem - 2px);
-	padding-left: 1rem;
+	padding-left: 2rem;
 }
 
 .is-searching nav ul:not(.matches),
