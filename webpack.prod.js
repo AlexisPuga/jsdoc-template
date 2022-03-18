@@ -2,6 +2,7 @@ const HookWebpackPlugin = require('hook-webpack-plugin');
 const {merge} = require('webpack-merge');
 const common = require('./webpack.common.js');
 const copy = require('copy');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 module.exports = merge(common, {
     mode: 'production',
@@ -24,6 +25,11 @@ module.exports = merge(common, {
                     });
                 });
             })).then(() => callback()).catch(error => callback(error));
+        }),
+        new CleanWebpackPlugin({
+            cleanOnceBeforeBuildPatterns: [
+                '**/*.hot-update.*'
+            ]
         })
     ]
 });
