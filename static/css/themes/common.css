@@ -56,7 +56,11 @@ td {
 table,
 .example,
 #readme .prettyprint {
-	border: 3px solid rgba(0, 0, 0, .05);
+	box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+	/* Reduce size to show box-shadow */
+	margin: 5px;
+	width: 100% !important; /** Fallback */
+	width: calc(100% - 5px*2) !important;
 }
 
 article,

@@ -107,7 +107,6 @@ dt, th {
 table {
 	margin-top: 10px;
 	border-collapse: separate;
-	width: 100%;
 }
 
 td, th {
@@ -345,7 +344,6 @@ table h6 {
 
 .example {
 	position: relative;
-	width: 100%;
 	display: block;
 	margin-top: 2rem;
 	min-width: 720px;
