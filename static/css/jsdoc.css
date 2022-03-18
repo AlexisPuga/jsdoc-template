@@ -136,8 +136,7 @@ kbd, samp,
 	padding: 0 10px;
 }
 
-code,
-.doc table h6 {
+code {
 	font-size: 100%;
 }
 
@@ -303,8 +302,8 @@ dd + dd {
 	margin-top: -2em;
 }
 
-table h6 {
-	padding-top: 2em;
+table .last.description span {
+	margin-bottom: 2em;
 }
 
 #readme p {

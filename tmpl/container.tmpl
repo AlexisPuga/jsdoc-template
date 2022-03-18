@@ -54,7 +54,7 @@
             <?js= self.partial('method.tmpl', module) ?>
         <?js }) ?>
     <?js } else if (doc.kind === 'class' || (doc.kind === 'namespace' && doc.signature)) { ?>
-        <?js= self.partial('method.tmpl', doc).replace(/<h4(?:(?!<\/h4>)[\s\S])+<\/h4>/ig, '').replace(/<h5((?:(?!<\/h5>)[\s\S])+)<\/h5>/ig, '<h3$1</h3>') ?>
+        <?js= self.partial('method.tmpl', doc).replace(/<h4(?:(?!<\/h4>)[\s\S])+<\/h4>/ig, '').replace(/<h5((?:(?!<\/h5>)[\s\S])+)<\/h5>/ig, '<h3$1</h3>').replace(/<h6((?:(?!<\/h6>)[\s\S])+)<\/h6>/ig, '<h4$1</h4>') ?>
     <?js } else { ?>
         <?js if (doc.description) { ?>
             <div class="description"><?js= doc.description ?></div>
