@@ -42,8 +42,15 @@ button,
 article,
 .doc > .member,
 #page-footer,
-#content > header {
+#content > header,
+td {
 	border: 1px solid rgba(0, 0, 0, .05);
+}
+
+td {
+	/* Remove overlaped borders */
+	border-bottom: 0;
+	border-right: 0;
 }
 
 table,
