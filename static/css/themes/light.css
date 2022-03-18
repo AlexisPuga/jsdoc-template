@@ -1,9 +1,5 @@
 @import 'common.css';
 
-th {
-	background-color: #f6f6f6;
-}
-
 body,
 button,
 #content > header {
